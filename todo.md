@@ -16,7 +16,8 @@ v1 history and scores: `experiments/v1-reference/`.
 ## 2. Pilot (gate before the fleet)
 
 - [x] Smoke run end-to-end on cheetah (3090 blocked on driver reboot): validation set active, all test sets scored, chunked weights round-tripped, model loads and generates
-- [ ] One real run (ms8_arabic_drafting) on cheetah_94gb: RUNNING (task 1e01dd80, enqueued 2026-07-26); on completion verify multi-part fetch_weights + generation
+- [x] First full-size pilot (task 1e01dd80): trained + scored; v2 scores slightly above v1 (+0.1-2.0, methodology fixes vindicated) — but 150 MB weight parts failed 4/4 uploads (file-server threshold drifts; MinIO unreachable from the Dallas workers, probe hung)
+- [ ] Pilot weights rerun (task d972b894, synoptic v0.1.6: 48 MB parts, two-pass retry): on completion verify multi-part fetch_weights + generation, then STOP for David's go
 - [ ] Hold here — David reviews before the full re-run
 
 ## 3. Full v2 re-run (22 runs, after the pilot gate)

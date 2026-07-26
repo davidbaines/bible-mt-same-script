@@ -10,6 +10,10 @@ Run the data-licence-check skill whenever selections are (re)built.
 """
 
 import argparse
+import os
+from pathlib import Path
+
+os.environ.setdefault("SYNOPTIC_ROOT", str(Path(__file__).resolve().parents[1]))
 
 from synoptic.script_pool import PoolSpec, build_pool, write_pool
 

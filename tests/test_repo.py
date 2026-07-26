@@ -60,10 +60,22 @@ def test_selections_match_pool_specs():
 
 
 @pytest.mark.integration
-def test_make_configs_is_deterministic(tmp_path):
+def test_make_configs_reproduces_committed_files():
+    """Regeneration must be a no-op against the committed tree.
+
+    Runs the generator in place, then asserts git sees no changes under the
+    generated paths — catching both non-determinism and drift between the
+    committed configs and the current generator/metadata.
+    """
     r = subprocess.run(
         [sys.executable, str(REPO / "scripts" / "make_configs.py")],
         capture_output=True, text=True, cwd=REPO,
     )
     assert r.returncode == 0, r.stderr
     assert "wrote 22 experiment configs" in r.stdout
+    dirty = subprocess.run(
+        ["git", "-C", str(REPO), "status", "--porcelain", "--",
+         "configs", "experiments/selection-latin-bantu.csv"],
+        capture_output=True, text=True,
+    ).stdout.strip()
+    assert not dirty, f"regeneration changed committed files:\n{dirty}"

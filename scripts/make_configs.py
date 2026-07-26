@@ -9,11 +9,17 @@ re-runnable; run after ``scripts/alignment/rank_sources.py``.
     .venv/bin/python scripts/make_configs.py
 """
 
+import os
 import sys
 from pathlib import Path
 
+import numpy as np
+
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "scripts"))
+# Anchor every synoptic repo-level read/write (selection regeneration, data
+# cache) to THIS repo, regardless of the invoking directory.
+os.environ.setdefault("SYNOPTIC_ROOT", str(REPO))
 
 import pandas as pd
 
@@ -30,12 +36,25 @@ ETHIOPIC_OT = {"gmve": "gofe", "gofe": "gmve"}  # target -> source
 
 
 def winners() -> dict[str, str]:
+    """Alignment winner per pool (mean eflomal over target rows, lower wins).
+
+    Ethiopic is skipped: both its runs force "the other OT text" as source
+    (ETHIOPIC_OT), so no alignment choice exists there. inf rows are scorer
+    failures (eflomal emits inf on some pairs) and are dropped with a note —
+    averaging them in would silently disqualify a candidate.
+    """
     df = pd.read_csv(REPO / "experiments" / "source-ranking.csv")
     out = {}
     for pool, sub in df.groupby("pool"):
+        if pool == "ethiopic":
+            continue
         scored = sub[sub["other_is_target"]]
-        if scored.empty:  # Ethiopic: candidates ARE the targets
-            scored = sub
+        bad = ~np.isfinite(scored["eflomal"])
+        if bad.any():
+            dropped = scored[bad][["candidate", "other"]].to_records(index=False)
+            print(f"note: dropping {len(dropped)} inf eflomal row(s) for "
+                  f"{pool}: {list(dropped)}")
+            scored = scored[~bad]
         agg = scored.groupby("candidate")["eflomal"].mean()
         out[pool] = agg.idxmin()
     return out

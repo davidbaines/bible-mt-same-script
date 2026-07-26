@@ -1,8 +1,8 @@
 """Rank candidate sources per script pool by alignment (spec.md, "Source").
 
-For every pool: candidates are the full-coverage members that are not targets
-(Ethiopic has none, so there the two OT texts — the targets themselves — are
-ranked for the gap-filling run; the drafting runs force "the other OT text").
+For every pool: candidates are the full-coverage members that are not targets.
+Ethiopic has none — its pairs are scored for the record only, since every
+Ethiopic run forces "the other OT text" as its source.
 Each candidate is scored against every other pool member on the shared NT
 verses (capped at 3000), with two scorers:
 
@@ -26,6 +26,9 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "scripts"))
+import os
+
+os.environ.setdefault("SYNOPTIC_ROOT", str(REPO))
 
 import pandas as pd
 

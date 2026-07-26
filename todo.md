@@ -17,7 +17,8 @@ v1 history and scores: `experiments/v1-reference/`.
 
 - [x] Smoke run end-to-end on cheetah (3090 blocked on driver reboot): validation set active, all test sets scored, chunked weights round-tripped, model loads and generates
 - [x] First full-size pilot (task 1e01dd80): trained + scored; v2 scores slightly above v1 (+0.1-2.0, methodology fixes vindicated) — but 150 MB weight parts failed 4/4 uploads (file-server threshold drifts; MinIO unreachable from the Dallas workers, probe hung)
-- [ ] Pilot weights rerun (task d972b894, synoptic v0.1.6: 48 MB parts, two-pass retry): on completion verify multi-part fetch_weights + generation, then STOP for David's go
+- [x] Chunked-artifact transport abandoned after three failure patterns (150 MB parts 4/4, 48 MB parts rejected after ~100 MB/task): the file server is unfit for bulk weights
+- [ ] Pilot weights attempt on the MinIO store (task d92a100a, synoptic v0.2.1 uploads the run dir to nlp-research/MT/experiments/synoptic/, i.e. ~/M): on completion verify fetch_weights --run + generation, then STOP for David's go
 - [ ] Hold here — David reviews before the full re-run
 
 ## 3. Full v2 re-run (22 runs, after the pilot gate)

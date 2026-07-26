@@ -6,7 +6,7 @@ Ethiopic run forces "the other OT text" as its source.
 Each candidate is scored against every other pool member on the shared NT
 verses (capped at 3000), with two scorers:
 
-- IBM-1 alignability (``samileides.align_score``) — higher is better;
+- IBM-1 alignability (``synoptic.align_score``) — higher is better;
 - eflomal per-token score (helper in the ``.venv-eflomal`` venv) — lower is
   better.
 
@@ -65,8 +65,8 @@ def candidates_for(pool: str, selection: pd.DataFrame) -> list[str]:
         & (selection["NTverses"].astype(int) >= FULL_NT)
     ]
     cands = [t for t in full["translationId"] if t not in spec.targets]
-    # Ethiopic: only the two targets have OTs; rank them for the gap-filling
-    # run (the drafting runs force the other OT text as source anyway).
+    # Ethiopic: only the two targets have OTs; score them for the record
+    # (every Ethiopic run forces the other OT text as its source).
     return cands or full["translationId"].tolist()
 
 
@@ -110,8 +110,8 @@ def main() -> None:
     print("\n=== winners (mean over pool targets; eflomal lower = better) ===")
     for pool in pools:
         sub = df[(df["pool"] == pool) & df["other_is_target"]]
-        if sub.empty:  # Ethiopic candidates ARE the targets: use all others
-            sub = df[df["pool"] == pool]
+        if sub.empty:  # Ethiopic: no non-target candidates; report all pairs
+            sub = df[df["pool"] == pool]  # (record only — sources are forced)
         agg = sub.groupby("candidate")[["ibm1_align", "eflomal"]].mean()
         ibm1_best = agg["ibm1_align"].idxmax()
         efl_best = agg["eflomal"].idxmin()

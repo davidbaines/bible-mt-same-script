@@ -8,15 +8,15 @@ v1 history and scores: `experiments/v1-reference/`.
 - [x] pyproject: synoptic as pinned git dependency (+ local path override for dev); train stack as plain dependencies (agents install them)
 - [x] Carry over: selections, source-ranking.csv, holdout YAMLs, Genesis-250 list, v1 scores as reference
 - [x] Scripts adapted: pools.py (POOLS + CLI), make_configs.py (validation section, companion_ranking), rank_sources.py
-- [ ] Regenerate the 22 experiment YAMLs; verify each loads and resolves
-- [ ] Repo tests pass (configs load, pools match selections)
-- [ ] Code review (both repos) passes with no findings
-- [ ] Push synoptic public + tag v0.1.0; push this repo; delete old bible-mt-same-script
+- [x] Regenerate the 22 experiment YAMLs; verify each loads and resolves
+- [x] Repo tests pass (configs load, pools match selections; regeneration reproduces committed files)
+- [x] Code review (both repos) passes with no findings (3 rounds on synoptic, 2 on this repo; 2026-07-26)
+- [x] Push synoptic public (tags v0.1.0-v0.1.5 as remote-bootstrap layers were fixed); push this repo. PENDING: old-repo deletion needs `gh auth refresh -h github.com -s delete_repo`, then rename v2-staging -> bible-mt-same-script
 
 ## 2. Pilot (gate before the fleet)
 
-- [ ] 3090 smoke run end-to-end (validation set active, all test sets scored)
-- [ ] One real run (ms8_arabic_drafting) on cheetah_94gb: chunked upload works, fetch_weights reassembles, model loads and generates
+- [x] Smoke run end-to-end on cheetah (3090 blocked on driver reboot): validation set active, all test sets scored, chunked weights round-tripped, model loads and generates
+- [ ] One real run (ms8_arabic_drafting) on cheetah_94gb: RUNNING (task 1e01dd80, enqueued 2026-07-26); on completion verify multi-part fetch_weights + generation
 - [ ] Hold here — David reviews before the full re-run
 
 ## 3. Full v2 re-run (22 runs, after the pilot gate)

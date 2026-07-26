@@ -3,7 +3,11 @@ name = "bible-mt-same-script"
 version = "2.0.0"
 description = "Same-script multi-source Bible MT (closed-text MT series 4, v2 on the synoptic toolkit)"
 readme = "spec.md"
-requires-python = ">=3.11"
+# Pinned to the ClearML workers' docker Python (pytorch/pytorch:2.4.1-cuda12.4
+# ships 3.11): the agents install the requirement versions captured from THIS
+# venv, so a newer local Python would capture pins (e.g. numpy 2.5) that
+# cannot install on the worker.
+requires-python = ">=3.11,<3.12"
 dependencies = [
     # The shared toolkit, pinned for fresh local installs. NOTE the remote
     # agents do NOT read this file: they install the requirements captured at

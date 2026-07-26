@@ -1,0 +1,48 @@
+[project]
+name = "bible-mt-same-script"
+version = "2.0.0"
+description = "Same-script multi-source Bible MT (closed-text MT series 4, v2 on the synoptic toolkit)"
+readme = "spec.md"
+requires-python = ">=3.11"
+dependencies = [
+    # The shared toolkit. Pinned to a tag: a fix must never silently change a
+    # running series. Bump deliberately, re-smoke, then re-run.
+    "synoptic @ git+https://github.com/davidbaines/synoptic@v0.1.0",
+    # Training stack, plain dependencies (not a group, not an extra) so the
+    # ClearML agents install it — synoptic's own train group does NOT install
+    # transitively. torch is capped below 2.7: the jobs_backlog workers'
+    # driver supports exactly CUDA 12.4 and torch 2.6.0 is the last cu124
+    # wheel — newer wheels fail CUDA init there ("driver too old (12040)").
+    "torch>=2.4,<2.7",
+    "transformers>=4.44",
+    "accelerate>=0.33",
+    "clearml>=1.16",
+    "matplotlib>=3.9",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+# Local development installs the sibling checkout instead of the git tag so
+# toolkit changes can be smoke-tested before they are tagged. ClearML agents
+# (pip from [project]) use the git URL above.
+[tool.uv.sources]
+synoptic = { path = "../synoptic", editable = true }
+torch = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.pytest.ini_options]
+addopts = "-q -m 'not integration'"
+testpaths = ["tests"]
+markers = [
+    "integration: touches the Hugging Face Hub over the network",
+]

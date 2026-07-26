@@ -1,0 +1,6 @@
+# Telugu: NT-only targets; the drafting and gap-filling conditions collapse.
+holdouts:
+  nit: [MRK, JAS, 1PE, 2PE]
+  vgr: [MRK, JAS, 1PE, 2PE]
+valid_size: 5000
+seed: 13

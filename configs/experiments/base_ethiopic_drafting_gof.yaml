@@ -1,0 +1,57 @@
+# Ethiopic drafting condition, target gof
+# Hyperparameters inherit from bible-interlingua's ie_big_shareable (ebible-mt)
+# so the same-script comparison changes one variable (spec.md).
+name: base_ethiopic_drafting_gof
+phase: one-to-many
+
+data:
+  selection: experiments/selection-ethiopic.csv
+  holdouts: configs/holdouts-ethiopic-drafting-gof.yaml
+  source: gmve
+  companion_ranking: coverage   # v1 behaviour, uniform across all runs
+  max_len: 192
+  max_ratio: 2.0
+
+tokenizer:
+  type: bpe
+  vocab_size: 32000
+
+model:                    # transformer-big (~210M)
+  arch: marian
+  encoder_layers: 6
+  decoder_layers: 6
+  d_model: 1024
+  encoder_attention_heads: 16
+  decoder_attention_heads: 16
+  encoder_ffn_dim: 4096
+  decoder_ffn_dim: 4096
+  dropout: 0.1
+  label_smoothing: 0.1
+
+training:
+  optimizer: adamw
+  lr: 5.0e-4
+  warmup_steps: 4000
+  lr_scheduler: cosine
+  per_device_batch_size: 128    # effective 256 seqs
+  gradient_accumulation: 2
+  max_grad_norm: 1.0
+  bf16: true
+  max_steps: 100000             # ceiling; probe early-stopping usually ends sooner
+  eval_every_steps: 2000
+  seed: 13
+
+inference:
+  beam: 5
+  length_penalty: 1.0
+  max_length: 192
+
+validation:                    # disjoint from train AND test (v2 policy)
+  every_steps: 1000
+  verses_per_language: 250
+  min_gain: 0.2                 # silnlp early-stop defaults
+  patience_steps: 4000
+  batch_size: 64
+  seed: 13
+
+oversample_holdouts: 1

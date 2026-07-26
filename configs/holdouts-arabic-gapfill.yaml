@@ -1,0 +1,9 @@
+# arabic gap-filling condition: NT test sets plus the committed Genesis-250 verse list.
+holdouts:
+  ckb: [MRK, JAS, 1PE, 2PE]
+  urdoucv: [MRK, JAS, 1PE, 2PE]
+verse_holdouts:
+  ckb: [configs/test-verses-gen250.txt]
+  urdoucv: [configs/test-verses-gen250.txt]
+valid_size: 5000
+seed: 13

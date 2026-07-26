@@ -1,0 +1,7 @@
+# Ethiopic gap-filling, target gof: NT test sets plus Genesis-250; gmve stays in the pool as the source.
+holdouts:
+  gofe: [MRK, JAS, 1PE, 2PE]
+verse_holdouts:
+  gofe: [configs/test-verses-gen250.txt]
+valid_size: 5000
+seed: 13

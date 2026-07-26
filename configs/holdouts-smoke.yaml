@@ -1,0 +1,9 @@
+# Smoke holdouts: one small book plus the committed Genesis-250 verse list,
+# so the tiny end-to-end run exercises both holdout kinds (book-level and
+# verse-level) and scores something real without generating a testament.
+holdouts:
+  hne: [JON, JAS]
+verse_holdouts:
+  hne: [configs/test-verses-gen250.txt]
+valid_size: 500
+seed: 13

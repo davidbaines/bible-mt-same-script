@@ -1,0 +1,5 @@
+# Ethiopic drafting, target gmv: whole OT + NT test sets; gofe stays in the pool as the source.
+holdouts:
+  gmve: [OT, MRK, JAS, 1PE, 2PE]
+valid_size: 5000
+seed: 13

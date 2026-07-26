@@ -1,0 +1,9 @@
+# latin-bantu gap-filling condition: NT test sets plus the committed Genesis-250 verse list.
+holdouts:
+  nde: [MRK, JAS, 1PE, 2PE]
+  nya: [MRK, JAS, 1PE, 2PE]
+verse_holdouts:
+  nde: [configs/test-verses-gen250.txt]
+  nya: [configs/test-verses-gen250.txt]
+valid_size: 5000
+seed: 13

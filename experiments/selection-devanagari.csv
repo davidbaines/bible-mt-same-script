@@ -1,0 +1,9 @@
+translationId,languageCode,languageNameInEnglish,family,script,OTverses,NTverses,DCverses,totalVerses,licence,ntOnly
+goj,goj,Gowlan,,Devanagari,0,7959,0,7959,by-sa,False
+gok,gok,Gowli,,Devanagari,0,7946,0,7946,by-sa,False
+hin2017,hin,Hindi,Indo-Aryan,Devanagari,23145,7959,0,31104,by-sa,False
+hlb,hlb,Halbi,,Devanagari,0,7959,0,7959,by-sa,False
+hne,hne,Chhattisgarhi,,Devanagari,23145,7958,0,31103,by-sa,False
+mar,mar,Marathi,Indo-Aryan,Devanagari,23143,7944,0,31087,by-sa,False
+sandev,san,Sanskrit,,Devanagari,0,7959,0,7959,by-sa,False
+thr,thr,"Tharu, Rana",,Devanagari,0,7959,0,7959,by-sa,False

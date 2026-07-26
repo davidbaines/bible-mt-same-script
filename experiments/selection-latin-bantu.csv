@@ -1,0 +1,8 @@
+translationId,languageCode,languageNameInEnglish,family,script,OTverses,NTverses,DCverses,totalVerses,licence,ntOnly
+kik,kik,Gikuyu,Atlantic-Congo,Latin,23145,7956,0,31101,by-sa,True
+lin,lin,Lingála,Atlantic-Congo,Latin,23212,7957,0,31169,by-sa,True
+lug,lug,Luganda,Atlantic-Congo,Latin,23145,7959,0,31104,by-sa,True
+nde,nde,Ndebele,Atlantic-Congo,Latin,23145,7958,0,31103,by-sa,False
+nya,nya,Chichewa,Atlantic-Congo,Latin,23145,7959,0,31104,by-sa,False
+sna,sna,chiShona,Atlantic-Congo,Latin,23145,7958,0,31103,by-sa,False
+swhonen,swh,Swahili,Atlantic-Congo,Latin,23145,7958,0,31103,by-sa,True

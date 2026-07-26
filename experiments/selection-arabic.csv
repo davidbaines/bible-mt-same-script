@@ -1,0 +1,7 @@
+translationId,languageCode,languageNameInEnglish,family,script,OTverses,NTverses,DCverses,totalVerses,licence,ntOnly
+arb-vd,arb,Arabic,Afro-Asiatic,Arabic,23145,7959,0,31104,Public Domain,False
+arbnav,arb,"Arabic, Standard",Afro-Asiatic,Arabic,23145,7958,0,31103,by-sa,False
+ckb,ckb,Central Kurdish,Indo-European,Arabic,23145,7958,0,31103,by-sa,False
+pesOPV,pes,Persian,Indo-European,Arabic,23139,7951,0,31090,Public Domain,False
+sanurd,san,Saṃskṛtam,,Arabic,0,7959,0,7959,by-sa,False
+urdoucv,urd,اردو,Indo-Aryan,Arabic,23145,7954,0,31099,by-sa,False

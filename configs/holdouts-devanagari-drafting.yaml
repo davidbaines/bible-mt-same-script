@@ -1,0 +1,6 @@
+# devanagari drafting condition: both targets train NT-only (whole OT + NT test sets held out).
+holdouts:
+  hne: [OT, MRK, JAS, 1PE, 2PE]
+  mar: [OT, MRK, JAS, 1PE, 2PE]
+valid_size: 5000
+seed: 13

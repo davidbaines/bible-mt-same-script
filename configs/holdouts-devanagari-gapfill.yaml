@@ -1,0 +1,9 @@
+# devanagari gap-filling condition: NT test sets plus the committed Genesis-250 verse list.
+holdouts:
+  hne: [MRK, JAS, 1PE, 2PE]
+  mar: [MRK, JAS, 1PE, 2PE]
+verse_holdouts:
+  hne: [configs/test-verses-gen250.txt]
+  mar: [configs/test-verses-gen250.txt]
+valid_size: 5000
+seed: 13

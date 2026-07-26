@@ -14,7 +14,7 @@ dependencies = [
     # enqueue time plus the git pin train.py forces from the INSTALLED
     # synoptic's version — so upgrading means bumping the sibling checkout
     # (and its tag) AND this pin together, then re-smoking.
-    "synoptic @ git+https://github.com/davidbaines/synoptic@v0.1.6",
+    "synoptic @ git+https://github.com/davidbaines/synoptic@v0.1.7",
     # Training stack, plain dependencies (not a group, not an extra) so the
     # ClearML agents install it — synoptic's own train group does NOT install
     # transitively. torch is capped below 2.7: the jobs_backlog workers'

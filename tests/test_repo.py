@@ -67,15 +67,29 @@ def test_make_configs_reproduces_committed_files():
     generated paths — catching both non-determinism and drift between the
     committed configs and the current generator/metadata.
     """
+    def generated_dirt() -> str:
+        return subprocess.run(
+            ["git", "-C", str(REPO), "status", "--porcelain", "--",
+             "configs", "experiments/selection-latin-bantu.csv"],
+            capture_output=True, text=True,
+        ).stdout.strip()
+
+    pre = generated_dirt()
+    assert not pre, (
+        "working tree already has local edits under the generated paths; "
+        f"commit or stash them before this test:\n{pre}"
+    )
     r = subprocess.run(
         [sys.executable, str(REPO / "scripts" / "make_configs.py")],
         capture_output=True, text=True, cwd=REPO,
     )
     assert r.returncode == 0, r.stderr
     assert "wrote 22 experiment configs" in r.stdout
-    dirty = subprocess.run(
-        ["git", "-C", str(REPO), "status", "--porcelain", "--",
-         "configs", "experiments/selection-latin-bantu.csv"],
-        capture_output=True, text=True,
-    ).stdout.strip()
+    dirty = generated_dirt()
     assert not dirty, f"regeneration changed committed files:\n{dirty}"
+    # Deletion gap: every committed experiment YAML must be one the generator
+    # (or the hand-written smoke config) still owns.
+    written = {ln.split()[-1] for ln in r.stdout.splitlines() if ln.startswith("  ")}
+    committed = {p.stem for p in (REPO / "configs" / "experiments").glob("*.yaml")}
+    stale = committed - written - {"smoke"}
+    assert not stale, f"committed configs no longer generated: {sorted(stale)}"

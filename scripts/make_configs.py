@@ -55,6 +55,11 @@ def winners() -> dict[str, str]:
             print(f"note: dropping {len(dropped)} inf eflomal row(s) for "
                   f"{pool}: {list(dropped)}")
             scored = scored[~bad]
+        if scored.empty:
+            raise SystemExit(
+                f"no finite eflomal target rows for pool {pool!r}; re-run "
+                "scripts/alignment/rank_sources.py"
+            )
         agg = scored.groupby("candidate")["eflomal"].mean()
         out[pool] = agg.idxmin()
     return out

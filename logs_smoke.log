@@ -1,0 +1,554 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1785057342.503578 2376662 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /home/david/Documents/Github/bible-mt-same-script-new/checkpoints/smoke/tokenizer/spm.txt
+  input_format: 
+  model_prefix: /home/david/Documents/Github/bible-mt-same-script-new/checkpoints/smoke/tokenizer/spm
+  model_type: BPE
+  vocab_size: 4000
+  self_test_sample_size: 0
+  character_coverage: 0.9999
+  input_sentence_size: 10000000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 16
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 0
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 0
+  user_defined_symbols: <1hin>
+  user_defined_symbols: <1hne>
+  user_defined_symbols: <1mar>
+  user_defined_symbols: <2hin>
+  user_defined_symbols: <2hne>
+  user_defined_symbols: <2mar>
+  required_chars: 
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 0
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 0
+  bos_id: 1
+  eos_id: 2
+  pad_id: 3
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 0
+  remove_extra_whitespaces: 1
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+I0000 00:00:1785057342.503699 2376662 trainer_interface.cc:364] SentenceIterator is not specified. Using MultiFileSentenceIterator.
+I0000 00:00:1785057342.503940 2376662 trainer_interface.cc:193] Loading corpus: /home/david/Documents/Github/bible-mt-same-script-new/checkpoints/smoke/tokenizer/spm.txt
+I0000 00:00:1785057342.634898 2376662 trainer_interface.cc:422] Loaded all 184746 sentences
+I0000 00:00:1785057342.634984 2376662 trainer_interface.cc:440] Adding meta_piece: <unk>
+I0000 00:00:1785057342.634996 2376662 trainer_interface.cc:440] Adding meta_piece: <s>
+I0000 00:00:1785057342.635002 2376662 trainer_interface.cc:440] Adding meta_piece: </s>
+I0000 00:00:1785057342.635008 2376662 trainer_interface.cc:440] Adding meta_piece: <pad>
+I0000 00:00:1785057342.635014 2376662 trainer_interface.cc:440] Adding meta_piece: <1hin>
+I0000 00:00:1785057342.635020 2376662 trainer_interface.cc:440] Adding meta_piece: <1hne>
+I0000 00:00:1785057342.635025 2376662 trainer_interface.cc:440] Adding meta_piece: <1mar>
+I0000 00:00:1785057342.635032 2376662 trainer_interface.cc:440] Adding meta_piece: <2hin>
+I0000 00:00:1785057342.635039 2376662 trainer_interface.cc:440] Adding meta_piece: <2hne>
+I0000 00:00:1785057342.635045 2376662 trainer_interface.cc:440] Adding meta_piece: <2mar>
+I0000 00:00:1785057342.635050 2376662 trainer_interface.cc:440] Adding meta_piece: <0x00>
+I0000 00:00:1785057342.635055 2376662 trainer_interface.cc:440] Adding meta_piece: <0x01>
+I0000 00:00:1785057342.635061 2376662 trainer_interface.cc:440] Adding meta_piece: <0x02>
+I0000 00:00:1785057342.635065 2376662 trainer_interface.cc:440] Adding meta_piece: <0x03>
+I0000 00:00:1785057342.635072 2376662 trainer_interface.cc:440] Adding meta_piece: <0x04>
+I0000 00:00:1785057342.635079 2376662 trainer_interface.cc:440] Adding meta_piece: <0x05>
+I0000 00:00:1785057342.635086 2376662 trainer_interface.cc:440] Adding meta_piece: <0x06>
+I0000 00:00:1785057342.635091 2376662 trainer_interface.cc:440] Adding meta_piece: <0x07>
+I0000 00:00:1785057342.635097 2376662 trainer_interface.cc:440] Adding meta_piece: <0x08>
+I0000 00:00:1785057342.635104 2376662 trainer_interface.cc:440] Adding meta_piece: <0x09>
+I0000 00:00:1785057342.635110 2376662 trainer_interface.cc:440] Adding meta_piece: <0x0A>
+I0000 00:00:1785057342.635116 2376662 trainer_interface.cc:440] Adding meta_piece: <0x0B>
+I0000 00:00:1785057342.635125 2376662 trainer_interface.cc:440] Adding meta_piece: <0x0C>
+I0000 00:00:1785057342.635145 2376662 trainer_interface.cc:440] Adding meta_piece: <0x0D>
+I0000 00:00:1785057342.635150 2376662 trainer_interface.cc:440] Adding meta_piece: <0x0E>
+I0000 00:00:1785057342.635155 2376662 trainer_interface.cc:440] Adding meta_piece: <0x0F>
+I0000 00:00:1785057342.635161 2376662 trainer_interface.cc:440] Adding meta_piece: <0x10>
+I0000 00:00:1785057342.635170 2376662 trainer_interface.cc:440] Adding meta_piece: <0x11>
+I0000 00:00:1785057342.635174 2376662 trainer_interface.cc:440] Adding meta_piece: <0x12>
+I0000 00:00:1785057342.635179 2376662 trainer_interface.cc:440] Adding meta_piece: <0x13>
+I0000 00:00:1785057342.635184 2376662 trainer_interface.cc:440] Adding meta_piece: <0x14>
+I0000 00:00:1785057342.635191 2376662 trainer_interface.cc:440] Adding meta_piece: <0x15>
+I0000 00:00:1785057342.635197 2376662 trainer_interface.cc:440] Adding meta_piece: <0x16>
+I0000 00:00:1785057342.635202 2376662 trainer_interface.cc:440] Adding meta_piece: <0x17>
+I0000 00:00:1785057342.635211 2376662 trainer_interface.cc:440] Adding meta_piece: <0x18>
+I0000 00:00:1785057342.635216 2376662 trainer_interface.cc:440] Adding meta_piece: <0x19>
+I0000 00:00:1785057342.635221 2376662 trainer_interface.cc:440] Adding meta_piece: <0x1A>
+I0000 00:00:1785057342.635227 2376662 trainer_interface.cc:440] Adding meta_piece: <0x1B>
+I0000 00:00:1785057342.635232 2376662 trainer_interface.cc:440] Adding meta_piece: <0x1C>
+I0000 00:00:1785057342.635239 2376662 trainer_interface.cc:440] Adding meta_piece: <0x1D>
+I0000 00:00:1785057342.635247 2376662 trainer_interface.cc:440] Adding meta_piece: <0x1E>
+I0000 00:00:1785057342.635252 2376662 trainer_interface.cc:440] Adding meta_piece: <0x1F>
+I0000 00:00:1785057342.635258 2376662 trainer_interface.cc:440] Adding meta_piece: <0x20>
+I0000 00:00:1785057342.635263 2376662 trainer_interface.cc:440] Adding meta_piece: <0x21>
+I0000 00:00:1785057342.635268 2376662 trainer_interface.cc:440] Adding meta_piece: <0x22>
+I0000 00:00:1785057342.635272 2376662 trainer_interface.cc:440] Adding meta_piece: <0x23>
+I0000 00:00:1785057342.635278 2376662 trainer_interface.cc:440] Adding meta_piece: <0x24>
+I0000 00:00:1785057342.635288 2376662 trainer_interface.cc:440] Adding meta_piece: <0x25>
+I0000 00:00:1785057342.635294 2376662 trainer_interface.cc:440] Adding meta_piece: <0x26>
+I0000 00:00:1785057342.635300 2376662 trainer_interface.cc:440] Adding meta_piece: <0x27>
+I0000 00:00:1785057342.635304 2376662 trainer_interface.cc:440] Adding meta_piece: <0x28>
+I0000 00:00:1785057342.635310 2376662 trainer_interface.cc:440] Adding meta_piece: <0x29>
+I0000 00:00:1785057342.635315 2376662 trainer_interface.cc:440] Adding meta_piece: <0x2A>
+I0000 00:00:1785057342.635324 2376662 trainer_interface.cc:440] Adding meta_piece: <0x2B>
+I0000 00:00:1785057342.635329 2376662 trainer_interface.cc:440] Adding meta_piece: <0x2C>
+I0000 00:00:1785057342.635335 2376662 trainer_interface.cc:440] Adding meta_piece: <0x2D>
+I0000 00:00:1785057342.635340 2376662 trainer_interface.cc:440] Adding meta_piece: <0x2E>
+I0000 00:00:1785057342.635345 2376662 trainer_interface.cc:440] Adding meta_piece: <0x2F>
+I0000 00:00:1785057342.635350 2376662 trainer_interface.cc:440] Adding meta_piece: <0x30>
+I0000 00:00:1785057342.635356 2376662 trainer_interface.cc:440] Adding meta_piece: <0x31>
+I0000 00:00:1785057342.635363 2376662 trainer_interface.cc:440] Adding meta_piece: <0x32>
+I0000 00:00:1785057342.635369 2376662 trainer_interface.cc:440] Adding meta_piece: <0x33>
+I0000 00:00:1785057342.635373 2376662 trainer_interface.cc:440] Adding meta_piece: <0x34>
+I0000 00:00:1785057342.635380 2376662 trainer_interface.cc:440] Adding meta_piece: <0x35>
+I0000 00:00:1785057342.635385 2376662 trainer_interface.cc:440] Adding meta_piece: <0x36>
+I0000 00:00:1785057342.635391 2376662 trainer_interface.cc:440] Adding meta_piece: <0x37>
+I0000 00:00:1785057342.635399 2376662 trainer_interface.cc:440] Adding meta_piece: <0x38>
+I0000 00:00:1785057342.635404 2376662 trainer_interface.cc:440] Adding meta_piece: <0x39>
+I0000 00:00:1785057342.635430 2376662 trainer_interface.cc:440] Adding meta_piece: <0x3A>
+I0000 00:00:1785057342.635436 2376662 trainer_interface.cc:440] Adding meta_piece: <0x3B>
+I0000 00:00:1785057342.635440 2376662 trainer_interface.cc:440] Adding meta_piece: <0x3C>
+I0000 00:00:1785057342.635448 2376662 trainer_interface.cc:440] Adding meta_piece: <0x3D>
+I0000 00:00:1785057342.635454 2376662 trainer_interface.cc:440] Adding meta_piece: <0x3E>
+I0000 00:00:1785057342.635460 2376662 trainer_interface.cc:440] Adding meta_piece: <0x3F>
+I0000 00:00:1785057342.635469 2376662 trainer_interface.cc:440] Adding meta_piece: <0x40>
+I0000 00:00:1785057342.635475 2376662 trainer_interface.cc:440] Adding meta_piece: <0x41>
+I0000 00:00:1785057342.635480 2376662 trainer_interface.cc:440] Adding meta_piece: <0x42>
+I0000 00:00:1785057342.635484 2376662 trainer_interface.cc:440] Adding meta_piece: <0x43>
+I0000 00:00:1785057342.635489 2376662 trainer_interface.cc:440] Adding meta_piece: <0x44>
+I0000 00:00:1785057342.635497 2376662 trainer_interface.cc:440] Adding meta_piece: <0x45>
+I0000 00:00:1785057342.635503 2376662 trainer_interface.cc:440] Adding meta_piece: <0x46>
+I0000 00:00:1785057342.635511 2376662 trainer_interface.cc:440] Adding meta_piece: <0x47>
+I0000 00:00:1785057342.635516 2376662 trainer_interface.cc:440] Adding meta_piece: <0x48>
+I0000 00:00:1785057342.635521 2376662 trainer_interface.cc:440] Adding meta_piece: <0x49>
+I0000 00:00:1785057342.635526 2376662 trainer_interface.cc:440] Adding meta_piece: <0x4A>
+I0000 00:00:1785057342.635530 2376662 trainer_interface.cc:440] Adding meta_piece: <0x4B>
+I0000 00:00:1785057342.635534 2376662 trainer_interface.cc:440] Adding meta_piece: <0x4C>
+I0000 00:00:1785057342.635541 2376662 trainer_interface.cc:440] Adding meta_piece: <0x4D>
+I0000 00:00:1785057342.635550 2376662 trainer_interface.cc:440] Adding meta_piece: <0x4E>
+I0000 00:00:1785057342.635555 2376662 trainer_interface.cc:440] Adding meta_piece: <0x4F>
+I0000 00:00:1785057342.635560 2376662 trainer_interface.cc:440] Adding meta_piece: <0x50>
+I0000 00:00:1785057342.635565 2376662 trainer_interface.cc:440] Adding meta_piece: <0x51>
+I0000 00:00:1785057342.635570 2376662 trainer_interface.cc:440] Adding meta_piece: <0x52>
+I0000 00:00:1785057342.635575 2376662 trainer_interface.cc:440] Adding meta_piece: <0x53>
+I0000 00:00:1785057342.635584 2376662 trainer_interface.cc:440] Adding meta_piece: <0x54>
+I0000 00:00:1785057342.635592 2376662 trainer_interface.cc:440] Adding meta_piece: <0x55>
+I0000 00:00:1785057342.635596 2376662 trainer_interface.cc:440] Adding meta_piece: <0x56>
+I0000 00:00:1785057342.635602 2376662 trainer_interface.cc:440] Adding meta_piece: <0x57>
+I0000 00:00:1785057342.635606 2376662 trainer_interface.cc:440] Adding meta_piece: <0x58>
+I0000 00:00:1785057342.635611 2376662 trainer_interface.cc:440] Adding meta_piece: <0x59>
+I0000 00:00:1785057342.635617 2376662 trainer_interface.cc:440] Adding meta_piece: <0x5A>
+I0000 00:00:1785057342.635626 2376662 trainer_interface.cc:440] Adding meta_piece: <0x5B>
+I0000 00:00:1785057342.635630 2376662 trainer_interface.cc:440] Adding meta_piece: <0x5C>
+I0000 00:00:1785057342.635638 2376662 trainer_interface.cc:440] Adding meta_piece: <0x5D>
+I0000 00:00:1785057342.635642 2376662 trainer_interface.cc:440] Adding meta_piece: <0x5E>
+I0000 00:00:1785057342.635648 2376662 trainer_interface.cc:440] Adding meta_piece: <0x5F>
+I0000 00:00:1785057342.635653 2376662 trainer_interface.cc:440] Adding meta_piece: <0x60>
+I0000 00:00:1785057342.635662 2376662 trainer_interface.cc:440] Adding meta_piece: <0x61>
+I0000 00:00:1785057342.635667 2376662 trainer_interface.cc:440] Adding meta_piece: <0x62>
+I0000 00:00:1785057342.635672 2376662 trainer_interface.cc:440] Adding meta_piece: <0x63>
+I0000 00:00:1785057342.635678 2376662 trainer_interface.cc:440] Adding meta_piece: <0x64>
+I0000 00:00:1785057342.635684 2376662 trainer_interface.cc:440] Adding meta_piece: <0x65>
+I0000 00:00:1785057342.635690 2376662 trainer_interface.cc:440] Adding meta_piece: <0x66>
+I0000 00:00:1785057342.635695 2376662 trainer_interface.cc:440] Adding meta_piece: <0x67>
+I0000 00:00:1785057342.635708 2376662 trainer_interface.cc:440] Adding meta_piece: <0x68>
+I0000 00:00:1785057342.635713 2376662 trainer_interface.cc:440] Adding meta_piece: <0x69>
+I0000 00:00:1785057342.635719 2376662 trainer_interface.cc:440] Adding meta_piece: <0x6A>
+I0000 00:00:1785057342.635723 2376662 trainer_interface.cc:440] Adding meta_piece: <0x6B>
+I0000 00:00:1785057342.635728 2376662 trainer_interface.cc:440] Adding meta_piece: <0x6C>
+I0000 00:00:1785057342.635735 2376662 trainer_interface.cc:440] Adding meta_piece: <0x6D>
+I0000 00:00:1785057342.635741 2376662 trainer_interface.cc:440] Adding meta_piece: <0x6E>
+I0000 00:00:1785057342.635750 2376662 trainer_interface.cc:440] Adding meta_piece: <0x6F>
+I0000 00:00:1785057342.635757 2376662 trainer_interface.cc:440] Adding meta_piece: <0x70>
+I0000 00:00:1785057342.635762 2376662 trainer_interface.cc:440] Adding meta_piece: <0x71>
+I0000 00:00:1785057342.635768 2376662 trainer_interface.cc:440] Adding meta_piece: <0x72>
+I0000 00:00:1785057342.635774 2376662 trainer_interface.cc:440] Adding meta_piece: <0x73>
+I0000 00:00:1785057342.635779 2376662 trainer_interface.cc:440] Adding meta_piece: <0x74>
+I0000 00:00:1785057342.635789 2376662 trainer_interface.cc:440] Adding meta_piece: <0x75>
+I0000 00:00:1785057342.635794 2376662 trainer_interface.cc:440] Adding meta_piece: <0x76>
+I0000 00:00:1785057342.635799 2376662 trainer_interface.cc:440] Adding meta_piece: <0x77>
+I0000 00:00:1785057342.635804 2376662 trainer_interface.cc:440] Adding meta_piece: <0x78>
+I0000 00:00:1785057342.635809 2376662 trainer_interface.cc:440] Adding meta_piece: <0x79>
+I0000 00:00:1785057342.635814 2376662 trainer_interface.cc:440] Adding meta_piece: <0x7A>
+I0000 00:00:1785057342.635819 2376662 trainer_interface.cc:440] Adding meta_piece: <0x7B>
+I0000 00:00:1785057342.635825 2376662 trainer_interface.cc:440] Adding meta_piece: <0x7C>
+I0000 00:00:1785057342.635835 2376662 trainer_interface.cc:440] Adding meta_piece: <0x7D>
+I0000 00:00:1785057342.635840 2376662 trainer_interface.cc:440] Adding meta_piece: <0x7E>
+I0000 00:00:1785057342.635845 2376662 trainer_interface.cc:440] Adding meta_piece: <0x7F>
+I0000 00:00:1785057342.635851 2376662 trainer_interface.cc:440] Adding meta_piece: <0x80>
+I0000 00:00:1785057342.635856 2376662 trainer_interface.cc:440] Adding meta_piece: <0x81>
+I0000 00:00:1785057342.635861 2376662 trainer_interface.cc:440] Adding meta_piece: <0x82>
+I0000 00:00:1785057342.635866 2376662 trainer_interface.cc:440] Adding meta_piece: <0x83>
+I0000 00:00:1785057342.635875 2376662 trainer_interface.cc:440] Adding meta_piece: <0x84>
+I0000 00:00:1785057342.635882 2376662 trainer_interface.cc:440] Adding meta_piece: <0x85>
+I0000 00:00:1785057342.635888 2376662 trainer_interface.cc:440] Adding meta_piece: <0x86>
+I0000 00:00:1785057342.635893 2376662 trainer_interface.cc:440] Adding meta_piece: <0x87>
+I0000 00:00:1785057342.635898 2376662 trainer_interface.cc:440] Adding meta_piece: <0x88>
+I0000 00:00:1785057342.635903 2376662 trainer_interface.cc:440] Adding meta_piece: <0x89>
+I0000 00:00:1785057342.635908 2376662 trainer_interface.cc:440] Adding meta_piece: <0x8A>
+I0000 00:00:1785057342.635917 2376662 trainer_interface.cc:440] Adding meta_piece: <0x8B>
+I0000 00:00:1785057342.635923 2376662 trainer_interface.cc:440] Adding meta_piece: <0x8C>
+I0000 00:00:1785057342.635930 2376662 trainer_interface.cc:440] Adding meta_piece: <0x8D>
+I0000 00:00:1785057342.635935 2376662 trainer_interface.cc:440] Adding meta_piece: <0x8E>
+I0000 00:00:1785057342.635940 2376662 trainer_interface.cc:440] Adding meta_piece: <0x8F>
+I0000 00:00:1785057342.635945 2376662 trainer_interface.cc:440] Adding meta_piece: <0x90>
+I0000 00:00:1785057342.635951 2376662 trainer_interface.cc:440] Adding meta_piece: <0x91>
+I0000 00:00:1785057342.635959 2376662 trainer_interface.cc:440] Adding meta_piece: <0x92>
+I0000 00:00:1785057342.635964 2376662 trainer_interface.cc:440] Adding meta_piece: <0x93>
+I0000 00:00:1785057342.635969 2376662 trainer_interface.cc:440] Adding meta_piece: <0x94>
+I0000 00:00:1785057342.635984 2376662 trainer_interface.cc:440] Adding meta_piece: <0x95>
+I0000 00:00:1785057342.635989 2376662 trainer_interface.cc:440] Adding meta_piece: <0x96>
+I0000 00:00:1785057342.635999 2376662 trainer_interface.cc:440] Adding meta_piece: <0x97>
+I0000 00:00:1785057342.636004 2376662 trainer_interface.cc:440] Adding meta_piece: <0x98>
+I0000 00:00:1785057342.636009 2376662 trainer_interface.cc:440] Adding meta_piece: <0x99>
+I0000 00:00:1785057342.636014 2376662 trainer_interface.cc:440] Adding meta_piece: <0x9A>
+I0000 00:00:1785057342.636019 2376662 trainer_interface.cc:440] Adding meta_piece: <0x9B>
+I0000 00:00:1785057342.636025 2376662 trainer_interface.cc:440] Adding meta_piece: <0x9C>
+I0000 00:00:1785057342.636031 2376662 trainer_interface.cc:440] Adding meta_piece: <0x9D>
+I0000 00:00:1785057342.636040 2376662 trainer_interface.cc:440] Adding meta_piece: <0x9E>
+I0000 00:00:1785057342.636046 2376662 trainer_interface.cc:440] Adding meta_piece: <0x9F>
+I0000 00:00:1785057342.636051 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA0>
+I0000 00:00:1785057342.636056 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA1>
+I0000 00:00:1785057342.636061 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA2>
+I0000 00:00:1785057342.636066 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA3>
+I0000 00:00:1785057342.636071 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA4>
+I0000 00:00:1785057342.636077 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA5>
+I0000 00:00:1785057342.636087 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA6>
+I0000 00:00:1785057342.636092 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA7>
+I0000 00:00:1785057342.636097 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA8>
+I0000 00:00:1785057342.636101 2376662 trainer_interface.cc:440] Adding meta_piece: <0xA9>
+I0000 00:00:1785057342.636106 2376662 trainer_interface.cc:440] Adding meta_piece: <0xAA>
+I0000 00:00:1785057342.636111 2376662 trainer_interface.cc:440] Adding meta_piece: <0xAB>
+I0000 00:00:1785057342.636116 2376662 trainer_interface.cc:440] Adding meta_piece: <0xAC>
+I0000 00:00:1785057342.636127 2376662 trainer_interface.cc:440] Adding meta_piece: <0xAD>
+I0000 00:00:1785057342.636132 2376662 trainer_interface.cc:440] Adding meta_piece: <0xAE>
+I0000 00:00:1785057342.636137 2376662 trainer_interface.cc:440] Adding meta_piece: <0xAF>
+I0000 00:00:1785057342.636142 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB0>
+I0000 00:00:1785057342.636148 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB1>
+I0000 00:00:1785057342.636152 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB2>
+I0000 00:00:1785057342.636157 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB3>
+I0000 00:00:1785057342.636166 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB4>
+I0000 00:00:1785057342.636173 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB5>
+I0000 00:00:1785057342.636179 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB6>
+I0000 00:00:1785057342.636185 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB7>
+I0000 00:00:1785057342.636191 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB8>
+I0000 00:00:1785057342.636196 2376662 trainer_interface.cc:440] Adding meta_piece: <0xB9>
+I0000 00:00:1785057342.636201 2376662 trainer_interface.cc:440] Adding meta_piece: <0xBA>
+I0000 00:00:1785057342.636213 2376662 trainer_interface.cc:440] Adding meta_piece: <0xBB>
+I0000 00:00:1785057342.636219 2376662 trainer_interface.cc:440] Adding meta_piece: <0xBC>
+I0000 00:00:1785057342.636227 2376662 trainer_interface.cc:440] Adding meta_piece: <0xBD>
+I0000 00:00:1785057342.636233 2376662 trainer_interface.cc:440] Adding meta_piece: <0xBE>
+I0000 00:00:1785057342.636239 2376662 trainer_interface.cc:440] Adding meta_piece: <0xBF>
+I0000 00:00:1785057342.636246 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC0>
+I0000 00:00:1785057342.636256 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC1>
+I0000 00:00:1785057342.636263 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC2>
+I0000 00:00:1785057342.636273 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC3>
+I0000 00:00:1785057342.636280 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC4>
+I0000 00:00:1785057342.636288 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC5>
+I0000 00:00:1785057342.636299 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC6>
+I0000 00:00:1785057342.636307 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC7>
+I0000 00:00:1785057342.636313 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC8>
+I0000 00:00:1785057342.636319 2376662 trainer_interface.cc:440] Adding meta_piece: <0xC9>
+I0000 00:00:1785057342.636326 2376662 trainer_interface.cc:440] Adding meta_piece: <0xCA>
+I0000 00:00:1785057342.636336 2376662 trainer_interface.cc:440] Adding meta_piece: <0xCB>
+I0000 00:00:1785057342.636342 2376662 trainer_interface.cc:440] Adding meta_piece: <0xCC>
+I0000 00:00:1785057342.636349 2376662 trainer_interface.cc:440] Adding meta_piece: <0xCD>
+I0000 00:00:1785057342.636356 2376662 trainer_interface.cc:440] Adding meta_piece: <0xCE>
+I0000 00:00:1785057342.636361 2376662 trainer_interface.cc:440] Adding meta_piece: <0xCF>
+I0000 00:00:1785057342.636368 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD0>
+I0000 00:00:1785057342.636378 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD1>
+I0000 00:00:1785057342.636384 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD2>
+I0000 00:00:1785057342.636389 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD3>
+I0000 00:00:1785057342.636396 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD4>
+I0000 00:00:1785057342.636405 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD5>
+I0000 00:00:1785057342.636426 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD6>
+I0000 00:00:1785057342.636438 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD7>
+I0000 00:00:1785057342.636444 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD8>
+I0000 00:00:1785057342.636450 2376662 trainer_interface.cc:440] Adding meta_piece: <0xD9>
+I0000 00:00:1785057342.636456 2376662 trainer_interface.cc:440] Adding meta_piece: <0xDA>
+I0000 00:00:1785057342.636462 2376662 trainer_interface.cc:440] Adding meta_piece: <0xDB>
+I0000 00:00:1785057342.636468 2376662 trainer_interface.cc:440] Adding meta_piece: <0xDC>
+I0000 00:00:1785057342.636477 2376662 trainer_interface.cc:440] Adding meta_piece: <0xDD>
+I0000 00:00:1785057342.636487 2376662 trainer_interface.cc:440] Adding meta_piece: <0xDE>
+I0000 00:00:1785057342.636493 2376662 trainer_interface.cc:440] Adding meta_piece: <0xDF>
+I0000 00:00:1785057342.636499 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE0>
+I0000 00:00:1785057342.636505 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE1>
+I0000 00:00:1785057342.636512 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE2>
+I0000 00:00:1785057342.636522 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE3>
+I0000 00:00:1785057342.636529 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE4>
+I0000 00:00:1785057342.636537 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE5>
+I0000 00:00:1785057342.636544 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE6>
+I0000 00:00:1785057342.636549 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE7>
+I0000 00:00:1785057342.636556 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE8>
+I0000 00:00:1785057342.636566 2376662 trainer_interface.cc:440] Adding meta_piece: <0xE9>
+I0000 00:00:1785057342.636572 2376662 trainer_interface.cc:440] Adding meta_piece: <0xEA>
+I0000 00:00:1785057342.636578 2376662 trainer_interface.cc:440] Adding meta_piece: <0xEB>
+I0000 00:00:1785057342.636585 2376662 trainer_interface.cc:440] Adding meta_piece: <0xEC>
+I0000 00:00:1785057342.636592 2376662 trainer_interface.cc:440] Adding meta_piece: <0xED>
+I0000 00:00:1785057342.636599 2376662 trainer_interface.cc:440] Adding meta_piece: <0xEE>
+I0000 00:00:1785057342.636609 2376662 trainer_interface.cc:440] Adding meta_piece: <0xEF>
+I0000 00:00:1785057342.636619 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF0>
+I0000 00:00:1785057342.636625 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF1>
+I0000 00:00:1785057342.636631 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF2>
+I0000 00:00:1785057342.636637 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF3>
+I0000 00:00:1785057342.636647 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF4>
+I0000 00:00:1785057342.636654 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF5>
+I0000 00:00:1785057342.636658 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF6>
+I0000 00:00:1785057342.636665 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF7>
+I0000 00:00:1785057342.636671 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF8>
+I0000 00:00:1785057342.636676 2376662 trainer_interface.cc:440] Adding meta_piece: <0xF9>
+I0000 00:00:1785057342.636683 2376662 trainer_interface.cc:440] Adding meta_piece: <0xFA>
+I0000 00:00:1785057342.636693 2376662 trainer_interface.cc:440] Adding meta_piece: <0xFB>
+I0000 00:00:1785057342.636699 2376662 trainer_interface.cc:440] Adding meta_piece: <0xFC>
+I0000 00:00:1785057342.636705 2376662 trainer_interface.cc:440] Adding meta_piece: <0xFD>
+I0000 00:00:1785057342.636711 2376662 trainer_interface.cc:440] Adding meta_piece: <0xFE>
+I0000 00:00:1785057342.636718 2376662 trainer_interface.cc:440] Adding meta_piece: <0xFF>
+I0000 00:00:1785057342.636835 2376662 trainer_interface.cc:445] Normalizing sentences...
+I0000 00:00:1785057343.181150 2376662 trainer_interface.cc:555] all chars count=30553679
+I0000 00:00:1785057343.181264 2376662 trainer_interface.cc:566] Done: 99.9967% characters are covered.
+I0000 00:00:1785057343.181286 2376662 trainer_interface.cc:578] Alphabet size=85
+I0000 00:00:1785057343.181294 2376662 trainer_interface.cc:579] Final character coverage=0.999967
+I0000 00:00:1785057343.895118 2376662 trainer_interface.cc:609] Done! preprocessed 184746 sentences.
+I0000 00:00:1785057343.895194 2376662 trainer_interface.cc:615] Tokenizing input sentences with whitespace: 184746
+I0000 00:00:1785057344.442122 2376662 trainer_interface.cc:626] Done! 117293
+I0000 00:00:1785057344.650503 2376662 bpe_model_trainer.cc:321] Added: freq=145326 size=20 all=3403 active=3316 piece=ला
+I0000 00:00:1785057344.670432 2376662 bpe_model_trainer.cc:321] Added: freq=85472 size=40 all=4637 active=4550 piece=हा
+I0000 00:00:1785057344.682615 2376662 bpe_model_trainer.cc:321] Added: freq=60631 size=60 all=5486 active=5399 piece=▁उस
+I0000 00:00:1785057344.693828 2376662 bpe_model_trainer.cc:321] Added: freq=47057 size=80 all=6673 active=6586 piece=▁रा
+I0000 00:00:1785057344.705803 2376662 bpe_model_trainer.cc:321] Added: freq=39278 size=100 all=7992 active=7905 piece=▁ना
+I0000 00:00:1785057344.715281 2376662 bpe_model_trainer.cc:321] Added: freq=32561 size=120 all=9172 active=9085 piece=▁सा
+I0000 00:00:1785057344.723604 2376662 bpe_model_trainer.cc:321] Added: freq=25943 size=140 all=10396 active=10309 piece=▁त्यां
+I0000 00:00:1785057344.729005 2376662 bpe_model_trainer.cc:321] Added: freq=22264 size=160 all=11291 active=11204 piece=ैं
+I0000 00:00:1785057344.734386 2376662 bpe_model_trainer.cc:321] Added: freq=19596 size=180 all=12069 active=11982 piece=▁भी
+I0000 00:00:1785057344.738246 2376662 bpe_model_trainer.cc:321] Added: freq=18008 size=200 all=12714 active=12627 piece=▁तुम
+I0000 00:00:1785057344.743684 2376662 bpe_model_trainer.cc:321] Added: freq=16636 size=220 all=13891 active=13804 piece=▁कार
+I0000 00:00:1785057344.748690 2376662 bpe_model_trainer.cc:321] Added: freq=14878 size=240 all=14969 active=14882 piece=▁करे
+I0000 00:00:1785057344.753798 2376662 bpe_model_trainer.cc:321] Added: freq=13433 size=260 all=15892 active=15805 piece=▁उसके
+I0000 00:00:1785057344.757117 2376662 bpe_model_trainer.cc:321] Added: freq=12403 size=280 all=16648 active=16561 piece=▁ऊपर
+I0000 00:00:1785057344.760650 2376662 bpe_model_trainer.cc:321] Added: freq=11347 size=300 all=17590 active=17503 piece=ड़ा
+I0000 00:00:1785057344.766486 2376662 bpe_model_trainer.cc:321] Added: freq=10255 size=320 all=18687 active=18600 piece=्यां
+I0000 00:00:1785057344.771164 2376662 bpe_model_trainer.cc:321] Added: freq=9673 size=340 all=19635 active=19548 piece=ंध
+I0000 00:00:1785057344.774117 2376662 bpe_model_trainer.cc:321] Added: freq=9060 size=360 all=20253 active=20166 piece=▁मू
+I0000 00:00:1785057344.778581 2376662 bpe_model_trainer.cc:321] Added: freq=8224 size=380 all=20954 active=20867 piece=प्र
+I0000 00:00:1785057344.783091 2376662 bpe_model_trainer.cc:321] Added: freq=7719 size=400 all=21482 active=21395 piece=▁पास
+I0000 00:00:1785057344.786630 2376662 bpe_model_trainer.cc:321] Added: freq=7307 size=420 all=22409 active=22322 piece=▁जिस
+I0000 00:00:1785057344.789610 2376662 bpe_model_trainer.cc:321] Added: freq=6857 size=440 all=22984 active=22897 piece=▁हुए
+I0000 00:00:1785057344.792650 2376662 bpe_model_trainer.cc:321] Added: freq=6553 size=460 all=23799 active=23712 piece=णार
+I0000 00:00:1785057344.794925 2376662 bpe_model_trainer.cc:321] Added: freq=6338 size=480 all=24757 active=24670 piece=▁मला
+I0000 00:00:1785057344.797155 2376662 bpe_model_trainer.cc:321] Added: freq=5946 size=500 all=25469 active=25382 piece=▁मनुष्य
+I0000 00:00:1785057344.799599 2376662 bpe_model_trainer.cc:321] Added: freq=5630 size=520 all=26033 active=25946 piece=▁दाऊद
+I0000 00:00:1785057344.801241 2376662 bpe_model_trainer.cc:321] Added: freq=5324 size=540 all=26365 active=26278 piece=▁चल
+I0000 00:00:1785057344.803527 2376662 bpe_model_trainer.cc:321] Added: freq=5006 size=560 all=27067 active=26980 piece=▁नाम
+I0000 00:00:1785057344.805648 2376662 bpe_model_trainer.cc:321] Added: freq=4783 size=580 all=27678 active=27591 piece=टे
+I0000 00:00:1785057344.807583 2376662 bpe_model_trainer.cc:321] Added: freq=4567 size=600 all=28349 active=28262 piece=▁इसलिए
+I0000 00:00:1785057344.809537 2376662 bpe_model_trainer.cc:321] Added: freq=4393 size=620 all=28961 active=28874 piece=▁उसको
+I0000 00:00:1785057344.810678 2376662 bpe_model_trainer.cc:321] Added: freq=4192 size=640 all=29222 active=29135 piece=▁गु
+I0000 00:00:1785057344.812502 2376662 bpe_model_trainer.cc:321] Added: freq=4050 size=660 all=29780 active=29693 piece=ब्
+I0000 00:00:1785057344.814504 2376662 bpe_model_trainer.cc:321] Added: freq=3923 size=680 all=30313 active=30226 piece=▁समान
+I0000 00:00:1785057344.816124 2376662 bpe_model_trainer.cc:321] Added: freq=3784 size=700 all=30859 active=30772 piece=जब
+I0000 00:00:1785057344.817728 2376662 bpe_model_trainer.cc:321] Added: freq=3633 size=720 all=31382 active=31295 piece=▁करते
+I0000 00:00:1785057344.819193 2376662 bpe_model_trainer.cc:321] Added: freq=3521 size=740 all=31966 active=31879 piece=▁बहुत
+I0000 00:00:1785057344.820765 2376662 bpe_model_trainer.cc:321] Added: freq=3421 size=760 all=32458 active=32371 piece=तून
+I0000 00:00:1785057344.822394 2376662 bpe_model_trainer.cc:321] Added: freq=3282 size=780 all=32861 active=32774 piece=▁हजार
+I0000 00:00:1785057344.823602 2376662 bpe_model_trainer.cc:321] Added: freq=3220 size=800 all=33246 active=33159 piece=▁दृ
+I0000 00:00:1785057344.825071 2376662 bpe_model_trainer.cc:321] Added: freq=3089 size=820 all=33826 active=33739 piece=भी
+I0000 00:00:1785057344.826223 2376662 bpe_model_trainer.cc:321] Added: freq=2995 size=840 all=34422 active=34335 piece=▁वंश
+I0000 00:00:1785057344.826860 2376662 bpe_model_trainer.cc:321] Added: freq=2929 size=860 all=34568 active=34481 piece=र्ण
+I0000 00:00:1785057344.828279 2376662 bpe_model_trainer.cc:321] Added: freq=2834 size=880 all=35078 active=34991 piece=▁करण्या
+I0000 00:00:1785057344.829040 2376662 bpe_model_trainer.cc:321] Added: freq=2770 size=900 all=35392 active=35305 piece=▁लगे
+I0000 00:00:1785057344.830104 2376662 bpe_model_trainer.cc:321] Added: freq=2687 size=920 all=35894 active=35807 piece=▁चे
+I0000 00:00:1785057344.831221 2376662 bpe_model_trainer.cc:321] Added: freq=2639 size=940 all=36387 active=36300 piece=▁मुख
+I0000 00:00:1785057344.832247 2376662 bpe_model_trainer.cc:321] Added: freq=2584 size=960 all=36786 active=36699 piece=छे
+I0000 00:00:1785057344.833180 2376662 bpe_model_trainer.cc:321] Added: freq=2522 size=980 all=37151 active=37064 piece=षयी
+I0000 00:00:1785057344.834436 2376662 bpe_model_trainer.cc:321] Added: freq=2443 size=1000 all=37561 active=37474 piece=मैं
+I0000 00:00:1785057344.835197 2376662 bpe_model_trainer.cc:321] Added: freq=2395 size=1020 all=37883 active=37796 piece=द्र
+I0000 00:00:1785057344.836195 2376662 bpe_model_trainer.cc:321] Added: freq=2325 size=1040 all=38193 active=38106 piece=गर
+I0000 00:00:1785057344.837101 2376662 bpe_model_trainer.cc:321] Added: freq=2268 size=1060 all=38625 active=38538 piece=▁सुना
+I0000 00:00:1785057344.838058 2376662 bpe_model_trainer.cc:321] Added: freq=2201 size=1080 all=39072 active=38985 piece=▁मोशे
+I0000 00:00:1785057344.839055 2376662 bpe_model_trainer.cc:321] Added: freq=2150 size=1100 all=39483 active=39396 piece=▁बाल
+I0000 00:00:1785057344.840084 2376662 bpe_model_trainer.cc:321] Added: freq=2119 size=1120 all=40099 active=40012 piece=▁आँ
+I0000 00:00:1785057344.841046 2376662 bpe_model_trainer.cc:321] Added: freq=2085 size=1140 all=40499 active=40412 piece=▁धरती
+I0000 00:00:1785057344.841899 2376662 bpe_model_trainer.cc:321] Added: freq=2037 size=1160 all=40832 active=40745 piece=▁घेऊन
+I0000 00:00:1785057344.842627 2376662 bpe_model_trainer.cc:321] Added: freq=1993 size=1180 all=41092 active=41005 piece=ंसा
+I0000 00:00:1785057344.843502 2376662 bpe_model_trainer.cc:321] Added: freq=1961 size=1200 all=41558 active=41471 piece=▁एका
+I0000 00:00:1785057344.844113 2376662 bpe_model_trainer.cc:321] Added: freq=1925 size=1220 all=41808 active=41721 piece=▁जाथे
+I0000 00:00:1785057344.844988 2376662 bpe_model_trainer.cc:321] Added: freq=1887 size=1240 all=42211 active=42124 piece=▁देशात
+I0000 00:00:1785057344.845838 2376662 bpe_model_trainer.cc:321] Added: freq=1858 size=1260 all=42641 active=42554 piece=इका
+I0000 00:00:1785057344.846521 2376662 bpe_model_trainer.cc:321] Added: freq=1819 size=1280 all=43001 active=42914 piece=नान
+I0000 00:00:1785057344.847357 2376662 bpe_model_trainer.cc:321] Added: freq=1781 size=1300 all=43383 active=43296 piece=▁किसम
+I0000 00:00:1785057344.848232 2376662 bpe_model_trainer.cc:321] Added: freq=1740 size=1320 all=43781 active=43694 piece=▁लान
+I0000 00:00:1785057344.849155 2376662 bpe_model_trainer.cc:321] Added: freq=1715 size=1340 all=44218 active=44131 piece=▁स्वतः
+I0000 00:00:1785057344.849691 2376662 bpe_model_trainer.cc:321] Added: freq=1685 size=1360 all=44410 active=44323 piece=▁ज्
+I0000 00:00:1785057344.850343 2376662 bpe_model_trainer.cc:321] Added: freq=1665 size=1380 all=44696 active=44609 piece=▁शब्द
+I0000 00:00:1785057344.851118 2376662 bpe_model_trainer.cc:321] Added: freq=1642 size=1400 all=45154 active=45067 piece=▁स्वरग
+I0000 00:00:1785057344.852096 2376662 bpe_model_trainer.cc:321] Added: freq=1598 size=1420 all=45384 active=45297 piece=▁भूमि
+I0000 00:00:1785057344.852839 2376662 bpe_model_trainer.cc:321] Added: freq=1566 size=1440 all=45532 active=45445 piece=▁शो
+I0000 00:00:1785057344.853620 2376662 bpe_model_trainer.cc:321] Added: freq=1542 size=1460 all=46023 active=45936 piece=िला
+I0000 00:00:1785057344.854500 2376662 bpe_model_trainer.cc:321] Added: freq=1512 size=1480 all=46393 active=46306 piece=▁नाव
+I0000 00:00:1785057344.855313 2376662 bpe_model_trainer.cc:321] Added: freq=1474 size=1500 all=46716 active=46629 piece=▁स्वा
+I0000 00:00:1785057344.856195 2376662 bpe_model_trainer.cc:321] Added: freq=1439 size=1520 all=47151 active=47064 piece=▁धूप
+I0000 00:00:1785057344.856909 2376662 bpe_model_trainer.cc:321] Added: freq=1420 size=1540 all=47559 active=47472 piece=▁सही
+I0000 00:00:1785057344.857776 2376662 bpe_model_trainer.cc:321] Added: freq=1390 size=1560 all=47940 active=47853 piece=▁नंतर
+I0000 00:00:1785057344.858727 2376662 bpe_model_trainer.cc:321] Added: freq=1355 size=1580 all=48344 active=48257 piece=भव
+I0000 00:00:1785057344.859320 2376662 bpe_model_trainer.cc:321] Added: freq=1337 size=1600 all=48629 active=48542 piece=▁पशु
+I0000 00:00:1785057344.859769 2376662 bpe_model_trainer.cc:321] Added: freq=1324 size=1620 all=48846 active=48759 piece=▁खाली
+I0000 00:00:1785057344.860630 2376662 bpe_model_trainer.cc:321] Added: freq=1294 size=1640 all=49173 active=49086 piece=नाच्या
+I0000 00:00:1785057344.861231 2376662 bpe_model_trainer.cc:321] Added: freq=1272 size=1660 all=49403 active=49316 piece=ैम
+I0000 00:00:1785057344.861901 2376662 bpe_model_trainer.cc:321] Added: freq=1255 size=1680 all=49710 active=49623 piece=▁वड
+I0000 00:00:1785057344.862342 2376662 bpe_model_trainer.cc:321] Added: freq=1234 size=1700 all=49809 active=49722 piece=▁अपराध
+I0000 00:00:1785057344.862832 2376662 bpe_model_trainer.cc:321] Added: freq=1211 size=1720 all=49941 active=49854 piece=▁जिहां
+I0000 00:00:1785057344.863393 2376662 bpe_model_trainer.cc:321] Added: freq=1188 size=1740 all=50166 active=50079 piece=▁पूर्ण
+I0000 00:00:1785057344.864153 2376662 bpe_model_trainer.cc:321] Added: freq=1168 size=1760 all=50462 active=50375 piece=▁सन्दूक
+I0000 00:00:1785057344.864771 2376662 bpe_model_trainer.cc:321] Added: freq=1151 size=1780 all=50707 active=50620 piece=▁रहते
+I0000 00:00:1785057344.865363 2376662 bpe_model_trainer.cc:321] Added: freq=1134 size=1800 all=50898 active=50811 piece=मेसा
+I0000 00:00:1785057344.866165 2376662 bpe_model_trainer.cc:321] Added: freq=1120 size=1820 all=51357 active=51270 piece=▁ठेवले
+I0000 00:00:1785057344.866796 2376662 bpe_model_trainer.cc:321] Added: freq=1103 size=1840 all=51689 active=51602 piece=▁आशीर्वा
+I0000 00:00:1785057344.867492 2376662 bpe_model_trainer.cc:321] Added: freq=1087 size=1860 all=52008 active=51921 piece=इसन
+I0000 00:00:1785057344.867973 2376662 bpe_model_trainer.cc:321] Added: freq=1072 size=1880 all=52154 active=52067 piece=वता
+I0000 00:00:1785057344.868657 2376662 bpe_model_trainer.cc:321] Added: freq=1059 size=1900 all=52572 active=52485 piece=▁द्वार
+I0000 00:00:1785057344.869375 2376662 bpe_model_trainer.cc:321] Added: freq=1047 size=1920 all=52966 active=52879 piece=▁आहात
+I0000 00:00:1785057344.869964 2376662 bpe_model_trainer.cc:321] Added: freq=1028 size=1940 all=53288 active=53201 piece=▁विध
+I0000 00:00:1785057344.870581 2376662 bpe_model_trainer.cc:321] Added: freq=1018 size=1960 all=53633 active=53546 piece=▁आशीर्वाद
+I0000 00:00:1785057344.871282 2376662 bpe_model_trainer.cc:321] Added: freq=998 size=1980 all=53900 active=53813 piece=▁तीर
+I0000 00:00:1785057344.871798 2376662 bpe_model_trainer.cc:321] Added: freq=989 size=2000 all=54160 active=54073 piece=थना
+I0000 00:00:1785057344.872177 2376662 bpe_model_trainer.cc:321] Added: freq=980 size=2020 all=54324 active=54237 piece=▁कहूं
+I0000 00:00:1785057344.872769 2376662 bpe_model_trainer.cc:321] Added: freq=969 size=2040 all=54681 active=54594 piece=▁मोठ
+I0000 00:00:1785057344.873188 2376662 bpe_model_trainer.cc:321] Added: freq=960 size=2060 all=54847 active=54760 piece=▁पतरस
+I0000 00:00:1785057344.873759 2376662 bpe_model_trainer.cc:321] Added: freq=948 size=2080 all=55077 active=54990 piece=ऱ्यां
+I0000 00:00:1785057344.874351 2376662 bpe_model_trainer.cc:321] Added: freq=933 size=2100 all=55272 active=55185 piece=▁पं
+I0000 00:00:1785057344.874772 2376662 bpe_model_trainer.cc:321] Added: freq=922 size=2120 all=55498 active=55411 piece=▁पुस्त
+I0000 00:00:1785057344.875320 2376662 bpe_model_trainer.cc:321] Added: freq=909 size=2140 all=55751 active=55664 piece=▁सुघर
+I0000 00:00:1785057344.875944 2376662 bpe_model_trainer.cc:321] Added: freq=898 size=2160 all=56027 active=55940 piece=▁पश्च
+I0000 00:00:1785057344.876373 2376662 bpe_model_trainer.cc:321] Added: freq=888 size=2180 all=56183 active=56096 piece=▁देवत
+I0000 00:00:1785057344.876894 2376662 bpe_model_trainer.cc:321] Added: freq=877 size=2200 all=56394 active=56307 piece=▁होऊन
+I0000 00:00:1785057344.877446 2376662 bpe_model_trainer.cc:321] Added: freq=868 size=2220 all=56607 active=56520 piece=टका
+I0000 00:00:1785057344.878108 2376662 bpe_model_trainer.cc:321] Added: freq=857 size=2240 all=56981 active=56894 piece=▁संकट
+I0000 00:00:1785057344.878905 2376662 bpe_model_trainer.cc:321] Added: freq=845 size=2260 all=57281 active=57194 piece=▁नष्ट
+I0000 00:00:1785057344.879646 2376662 bpe_model_trainer.cc:321] Added: freq=835 size=2280 all=57629 active=57542 piece=▁बईरीमन
+I0000 00:00:1785057344.880328 2376662 bpe_model_trainer.cc:321] Added: freq=823 size=2300 all=57935 active=57848 piece=▁उभा
+I0000 00:00:1785057344.880875 2376662 bpe_model_trainer.cc:321] Added: freq=813 size=2320 all=58189 active=58102 piece=़िर
+I0000 00:00:1785057344.881369 2376662 bpe_model_trainer.cc:321] Added: freq=804 size=2340 all=58332 active=58245 piece=▁लेव
+I0000 00:00:1785057344.881916 2376662 bpe_model_trainer.cc:321] Added: freq=797 size=2360 all=58574 active=58487 piece=भिचार
+I0000 00:00:1785057344.882320 2376662 bpe_model_trainer.cc:321] Added: freq=789 size=2380 all=58725 active=58638 piece=▁गौ
+I0000 00:00:1785057344.882811 2376662 bpe_model_trainer.cc:321] Added: freq=780 size=2400 all=58962 active=58875 piece=▁देवय
+I0000 00:00:1785057344.883316 2376662 bpe_model_trainer.cc:321] Added: freq=771 size=2420 all=59201 active=59114 piece=म्ह
+I0000 00:00:1785057344.883710 2376662 bpe_model_trainer.cc:321] Added: freq=762 size=2440 all=59361 active=59274 piece=प्रका
+I0000 00:00:1785057344.884354 2376662 bpe_model_trainer.cc:321] Added: freq=750 size=2460 all=59611 active=59524 piece=▁दंड
+I0000 00:00:1785057344.884937 2376662 bpe_model_trainer.cc:321] Added: freq=741 size=2480 all=59862 active=59775 piece=▁राख
+I0000 00:00:1785057344.885511 2376662 bpe_model_trainer.cc:321] Added: freq=731 size=2500 all=60143 active=60056 piece=▁आली
+I0000 00:00:1785057344.885960 2376662 bpe_model_trainer.cc:321] Added: freq=724 size=2520 all=60402 active=60315 piece=रामन
+I0000 00:00:1785057344.886321 2376662 bpe_model_trainer.cc:321] Added: freq=715 size=2540 all=60529 active=60442 piece=▁पछ
+I0000 00:00:1785057344.886691 2376662 bpe_model_trainer.cc:321] Added: freq=707 size=2560 all=60692 active=60605 piece=▁बिरोध
+I0000 00:00:1785057344.886989 2376662 bpe_model_trainer.cc:321] Added: freq=701 size=2580 all=60773 active=60686 piece=▁माहीत
+I0000 00:00:1785057344.887525 2376662 bpe_model_trainer.cc:321] Added: freq=692 size=2600 all=61101 active=61014 piece=▁योसे
+I0000 00:00:1785057344.888132 2376662 bpe_model_trainer.cc:321] Added: freq=684 size=2620 all=61500 active=61413 piece=▁अइसन
+I0000 00:00:1785057344.888454 2376662 bpe_model_trainer.cc:321] Added: freq=673 size=2640 all=61593 active=61506 piece=8)
+I0000 00:00:1785057344.888887 2376662 bpe_model_trainer.cc:321] Added: freq=667 size=2660 all=61751 active=61664 piece=इस्राएल
+I0000 00:00:1785057344.889392 2376662 bpe_model_trainer.cc:321] Added: freq=659 size=2680 all=61960 active=61873 piece=▁तोड़
+I0000 00:00:1785057344.889757 2376662 bpe_model_trainer.cc:321] Added: freq=652 size=2700 all=62109 active=62022 piece=▁बन्द
+I0000 00:00:1785057344.890248 2376662 bpe_model_trainer.cc:321] Added: freq=646 size=2720 all=62434 active=62347 piece=▁हमला
+I0000 00:00:1785057344.890696 2376662 bpe_model_trainer.cc:321] Added: freq=638 size=2740 all=62595 active=62508 piece=▁लेय
+I0000 00:00:1785057344.891102 2376662 bpe_model_trainer.cc:321] Added: freq=632 size=2760 all=62770 active=62683 piece=▁करण्यास
+I0000 00:00:1785057344.891653 2376662 bpe_model_trainer.cc:321] Added: freq=625 size=2780 all=62979 active=62892 piece=ँति
+I0000 00:00:1785057344.892075 2376662 bpe_model_trainer.cc:321] Added: freq=619 size=2800 all=63184 active=63097 piece=▁सबले
+I0000 00:00:1785057344.892477 2376662 bpe_model_trainer.cc:321] Added: freq=613 size=2820 all=63327 active=63240 piece=▁घृ
+I0000 00:00:1785057344.892903 2376662 bpe_model_trainer.cc:321] Added: freq=607 size=2840 all=63469 active=63382 piece=ुवई
+I0000 00:00:1785057344.893318 2376662 bpe_model_trainer.cc:321] Added: freq=601 size=2860 all=63669 active=63582 piece=▁मजबूत
+I0000 00:00:1785057344.893747 2376662 bpe_model_trainer.cc:321] Added: freq=594 size=2880 all=63864 active=63777 piece=▁गन
+I0000 00:00:1785057344.894174 2376662 bpe_model_trainer.cc:321] Added: freq=589 size=2900 all=64119 active=64032 piece=▁गुलाम
+I0000 00:00:1785057344.894517 2376662 bpe_model_trainer.cc:321] Added: freq=584 size=2920 all=64254 active=64167 piece=▁सदाकाल
+I0000 00:00:1785057344.894896 2376662 bpe_model_trainer.cc:321] Added: freq=578 size=2940 all=64442 active=64355 piece=दने
+I0000 00:00:1785057344.895319 2376662 bpe_model_trainer.cc:321] Added: freq=571 size=2960 all=64599 active=64512 piece=रूख
+I0000 00:00:1785057344.895673 2376662 bpe_model_trainer.cc:321] Added: freq=567 size=2980 all=64784 active=64697 piece=वंव
+I0000 00:00:1785057344.896203 2376662 bpe_model_trainer.cc:321] Added: freq=562 size=3000 all=65057 active=64970 piece=ंमध्ये
+I0000 00:00:1785057344.896637 2376662 bpe_model_trainer.cc:321] Added: freq=555 size=3020 all=65270 active=65183 piece=मला
+I0000 00:00:1785057344.897152 2376662 bpe_model_trainer.cc:321] Added: freq=549 size=3040 all=65481 active=65394 piece=▁घेतली
+I0000 00:00:1785057344.897747 2376662 bpe_model_trainer.cc:321] Added: freq=542 size=3060 all=65715 active=65628 piece=▁बेकार
+I0000 00:00:1785057344.898100 2376662 bpe_model_trainer.cc:321] Added: freq=538 size=3080 all=65866 active=65779 piece=▁वाटे
+I0000 00:00:1785057344.898579 2376662 bpe_model_trainer.cc:321] Added: freq=533 size=3100 all=66064 active=65977 piece=▁नगरे
+I0000 00:00:1785057344.898895 2376662 bpe_model_trainer.cc:321] Added: freq=529 size=3120 all=66219 active=66132 piece=▁बताय
+I0000 00:00:1785057344.899380 2376662 bpe_model_trainer.cc:321] Added: freq=521 size=3140 all=66451 active=66364 piece=▁फरी
+I0000 00:00:1785057344.899745 2376662 bpe_model_trainer.cc:321] Added: freq=518 size=3160 all=66610 active=66523 piece=▁जागा
+I0000 00:00:1785057344.900209 2376662 bpe_model_trainer.cc:321] Added: freq=513 size=3180 all=66836 active=66749 piece=▁पितरों
+I0000 00:00:1785057344.900522 2376662 bpe_model_trainer.cc:321] Added: freq=507 size=3200 all=66942 active=66855 piece=ेंन
+I0000 00:00:1785057344.900899 2376662 bpe_model_trainer.cc:321] Added: freq=504 size=3220 all=67126 active=67039 piece=्यांचे
+I0000 00:00:1785057344.901254 2376662 bpe_model_trainer.cc:321] Added: freq=501 size=3240 all=67307 active=67220 piece=▁चुके
+I0000 00:00:1785057344.901616 2376662 bpe_model_trainer.cc:321] Added: freq=497 size=3260 all=67494 active=67407 piece=▁बहुंते
+I0000 00:00:1785057344.902029 2376662 bpe_model_trainer.cc:321] Added: freq=491 size=3280 all=67710 active=67623 piece=▁गरज
+I0000 00:00:1785057344.902521 2376662 bpe_model_trainer.cc:321] Added: freq=487 size=3300 all=68021 active=67934 piece=▁करूब
+I0000 00:00:1785057344.902888 2376662 bpe_model_trainer.cc:321] Added: freq=484 size=3320 all=68224 active=68137 piece=▁दुर्
+I0000 00:00:1785057344.903323 2376662 bpe_model_trainer.cc:321] Added: freq=480 size=3340 all=68471 active=68384 piece=▁कसे
+I0000 00:00:1785057344.903857 2376662 bpe_model_trainer.cc:321] Added: freq=476 size=3360 all=68796 active=68709 piece=▁स्वीकार
+I0000 00:00:1785057344.904194 2376662 bpe_model_trainer.cc:321] Added: freq=472 size=3380 all=68911 active=68824 piece=▁जमिनी
+I0000 00:00:1785057344.904687 2376662 bpe_model_trainer.cc:321] Added: freq=467 size=3400 all=69167 active=69080 piece=▁शहरपनाह
+I0000 00:00:1785057344.904990 2376662 bpe_model_trainer.cc:321] Added: freq=462 size=3420 all=69323 active=69236 piece=थम
+I0000 00:00:1785057344.905318 2376662 bpe_model_trainer.cc:321] Added: freq=457 size=3440 all=69419 active=69332 piece=▁कामा
+I0000 00:00:1785057344.905621 2376662 bpe_model_trainer.cc:321] Added: freq=453 size=3460 all=69542 active=69455 piece=▁हाकिमों
+I0000 00:00:1785057344.906113 2376662 bpe_model_trainer.cc:321] Added: freq=448 size=3480 all=69823 active=69736 piece=▁सुस
+I0000 00:00:1785057344.906469 2376662 bpe_model_trainer.cc:321] Added: freq=444 size=3500 all=70009 active=69922 piece=▁होना
+I0000 00:00:1785057344.906779 2376662 bpe_model_trainer.cc:321] Added: freq=439 size=3520 all=70107 active=70020 piece=्वे
+I0000 00:00:1785057344.907163 2376662 bpe_model_trainer.cc:321] Added: freq=436 size=3540 all=70302 active=70215 piece=▁आका
+I0000 00:00:1785057344.907531 2376662 bpe_model_trainer.cc:321] Added: freq=432 size=3560 all=70453 active=70366 piece=▁अन्नबलि
+I0000 00:00:1785057344.907775 2376662 bpe_model_trainer.cc:321] Added: freq=428 size=3580 all=70546 active=70459 piece=▁फक्त
+I0000 00:00:1785057344.908254 2376662 bpe_model_trainer.cc:321] Added: freq=425 size=3600 all=70771 active=70684 piece=▁वेळी
+I0000 00:00:1785057344.908576 2376662 bpe_model_trainer.cc:321] Added: freq=422 size=3620 all=70872 active=70785 piece=▁अने
+I0000 00:00:1785057344.908895 2376662 bpe_model_trainer.cc:321] Added: freq=420 size=3640 all=71059 active=70972 piece=▁अन्यजातियों
+I0000 00:00:1785057344.934394 2376662 trainer_interface.cc:702] Saving model: /home/david/Documents/Github/bible-mt-same-script-new/checkpoints/smoke/tokenizer/spm.model
+I0000 00:00:1785057344.938574 2376662 trainer_interface.cc:714] Saving vocabs: /home/david/Documents/Github/bible-mt-same-script-new/checkpoints/smoke/tokenizer/spm.vocab
+/home/david/Documents/Github/bible-mt-same-script-new/.venv/lib/python3.13/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 804: forward compatibility was attempted on non supported HW (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)
+  return torch._C._cuda_getDeviceCount() > 0
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/david/Documents/Github/synoptic/src/synoptic/train.py", line 452, in <module>
+    main()
+    ~~~~^^
+  File "/home/david/Documents/Github/synoptic/src/synoptic/train.py", line 448, in main
+    run(p.parse_args())
+    ~~~^^^^^^^^^^^^^^^^
+  File "/home/david/Documents/Github/synoptic/src/synoptic/train.py", line 314, in run
+    targs = build_training_args(cfg, output, args)
+  File "/home/david/Documents/Github/synoptic/src/synoptic/train.py", line 195, in build_training_args
+    return Seq2SeqTrainingArguments(
+        output_dir=str(output),
+    ...<23 lines>...
+        predict_with_generate=False,
+    )
+  File "<string>", line 120, in __init__
+  File "/home/david/Documents/Github/bible-mt-same-script-new/.venv/lib/python3.13/site-packages/transformers/training_args.py", line 1552, in __post_init__
+    self._validate_args()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/david/Documents/Github/bible-mt-same-script-new/.venv/lib/python3.13/site-packages/transformers/training_args.py", line 1716, in _validate_args
+    raise ValueError(error_message)
+ValueError: Your setup doesn't support bf16/gpu. You need to assign use_cpu if you want to train the model on CPU.
+Preparing data for 'smoke' ...
+  verse holdout hne: 250/250 vrefs held out (the rest are empty/range cells)
+  train manifest checksum: 1ea98092c8d8349d40fd0f42cbbf2e982225e8f167cf53720f00ff1c160c214e
+  multi-source (K=3, k_min=1, companions=coverage): 92373 training pairs
+  pairs: train=92373 valid=500 test=406
+  tokenizer: 4000 pieces (unk=0 bos=1 eos=2 pad=3)
+  length filter (train): {'input': 92373, 'dropped_too_long': 4, 'dropped_ratio': 0, 'kept': 92369}
+  model: marian 3.9M params

@@ -110,7 +110,6 @@ def experiment_yaml(*, name: str, pool: str, holdouts: str, source: str,
         "  label_smoothing: 0.1",
         "",
         "training:",
-        "  optimizer: adamw",
         "  lr: 5.0e-4",
         "  warmup_steps: 4000",
         "  lr_scheduler: cosine",
@@ -133,8 +132,6 @@ def experiment_yaml(*, name: str, pool: str, holdouts: str, source: str,
         "  patience_steps: 4000",
         f"  batch_size: {probe_batch}",
         "  seed: 13",
-        "",
-        "oversample_holdouts: 1",
     ]) + "\n"
 
 

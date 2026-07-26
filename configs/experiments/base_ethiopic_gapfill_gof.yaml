@@ -29,7 +29,6 @@ model:                    # transformer-big (~210M)
   label_smoothing: 0.1
 
 training:
-  optimizer: adamw
   lr: 5.0e-4
   warmup_steps: 4000
   lr_scheduler: cosine
@@ -53,5 +52,3 @@ validation:                    # disjoint from train AND test (v2 policy)
   patience_steps: 4000
   batch_size: 64
   seed: 13
-
-oversample_holdouts: 1

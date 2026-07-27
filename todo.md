@@ -18,7 +18,14 @@ v1 history and scores: `experiments/v1-reference/`.
 - [x] Smoke run end-to-end on cheetah (3090 blocked on driver reboot): validation set active, all test sets scored, chunked weights round-tripped, model loads and generates
 - [x] First full-size pilot (task 1e01dd80): trained + scored; v2 scores slightly above v1 (+0.1-2.0, methodology fixes vindicated) — but 150 MB weight parts failed 4/4 uploads (file-server threshold drifts; MinIO unreachable from the Dallas workers, probe hung)
 - [x] Chunked-artifact transport abandoned after three failure patterns (150 MB parts 4/4, 48 MB parts rejected after ~100 MB/task): the file server is unfit for bulk weights
-- [ ] Pilot weights attempt on the MinIO store (task d92a100a, synoptic v0.2.1 uploads the run dir to nlp-research/MT/experiments/synoptic/, i.e. ~/M): on completion verify fetch_weights --run + generation, then STOP for David's go
+- [x] Weights transport proven end-to-end (synoptic v0.2.3): a worker uploads the run dir to the MinIO store (~/M/MT/experiments/synoptic/<repo>/<run>/), fetch_weights --run downloads it, model loads and generates. Diagnosis chain: ClearML file-server drops bulk uploads (any chunk size) -> switched to the MinIO store silnlp uses -> agents inject the store as a bare IP the hostname-only cert rejects, and the hostname doesn't resolve on workers -> --add-host maps hostname->IP (resolved at enqueue) so it connects by the cert-valid hostname to the routable IP, full TLS
+- [x] GATE MET (David's instruction): code review passed both repos; one real experiment (ms8_arabic_drafting) trained + scored (v2 >= v1); model download verified
+
+## Awaiting David
+- [ ] Go/no-go on the 22-run fleet (held per instruction)
+- [ ] Recommended first: single ms8_arabic_drafting re-run on v0.2.3 to bank the first real retained weights (its earlier real run predated the transport fix, so those weights were lost) and prove full-size (~840 MB) download
+- [ ] `gh auth refresh -h github.com -s delete_repo`, then delete old bible-mt-same-script + rename v2-staging -> bible-mt-same-script (do BEFORE the fleet: store paths key off the repo name)
+- [ ] 3090 driver reboot (local training/verification blocked until then)
 - [ ] Hold here — David reviews before the full re-run
 
 ## 3. Full v2 re-run (22 runs, after the pilot gate)

@@ -20,7 +20,13 @@ v1 history and scores: `experiments/v1-reference/`.
 - [x] Chunked-artifact transport abandoned after three failure patterns (150 MB parts 4/4, 48 MB parts rejected after ~100 MB/task): the file server is unfit for bulk weights
 - [x] Weights transport proven end-to-end (synoptic v0.2.3): a worker uploads the run dir to the MinIO store (~/M/MT/experiments/synoptic/<repo>/<run>/), fetch_weights --run downloads it, model loads and generates. Diagnosis chain: ClearML file-server drops bulk uploads (any chunk size) -> switched to the MinIO store silnlp uses -> agents inject the store as a bare IP the hostname-only cert rejects, and the hostname doesn't resolve on workers -> --add-host maps hostname->IP (resolved at enqueue) so it connects by the cert-valid hostname to the routable IP, full TLS
 - [x] Transport code reviewed (the advisor caught that v0.1.1-v0.2.3 + the v0.3.0 store rewrite were post-review): 2 reviewers on the transport diff + 1 on store.py; all findings fixed (partial-upload-looks-complete closed via manifest+verify; preflight; prefix-clear; enqueue hard-fail; overfit upload gate). synoptic v0.3.1.
-- [ ] GATE (David's instruction): real full-size round-trip — ms8_arabic_drafting on v0.3.1 (task 65a03603) RUNNING; on completion verify manifest-guaranteed upload of the ~840 MB model + fetch_weights --run + generate, THEN report gate met
+- [x] GATE MET: real full-size round-trip verified — ms8_arabic_drafting (v0.3.1) trained + scored (whole-OT ckb 30.19 / urd 28.86); its 837 MB model uploaded complete (185 files + manifest), fetch_weights --run downloaded and manifest-verified all 185, model loads and generates correct Central Kurdish Genesis 1:1. First real v2 model now on the store.
+
+## Awaiting David (fleet held per instruction)
+- [ ] Go/no-go on the remaining 21 fleet runs (ms8_arabic_drafting already banked)
+- [ ] `gh auth refresh -h github.com -s delete_repo`, then delete old bible-mt-same-script + rename v2-staging -> bible-mt-same-script (do BEFORE the fleet: store paths key off the repo name — currently 'bible-mt-same-script-v2-staging')
+- [ ] 3090 driver reboot (local training/verification blocked until then)
+- [ ] Optional pre-fleet: a scripts/run_fleet.py launcher (absolute paths, ≥2-free gate, records task ids) to de-risk 21 manual enqueues
 
 ## Awaiting David
 - [ ] Go/no-go on the 22-run fleet (held per instruction)

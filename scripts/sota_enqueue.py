@@ -13,6 +13,7 @@ experiments/sota-tasks.csv; already-enqueued runs are skipped (idempotent).
 from __future__ import annotations
 
 import argparse
+import re
 import csv
 import os
 import subprocess
@@ -72,12 +73,9 @@ def main() -> None:
         out = subprocess.run(argv, cwd=SILNLP_DIR, env=env,
                              capture_output=True, text=True)
         blob = out.stdout + out.stderr
-        tid = ""
-        for tok in blob.split():
-            m = tok.strip("/").split("/")[-1]
-            if "experiments/" in tok and len(m) == 32:
-                tid = m
-                break
+        # ClearML prints "task id=<32hex>" and ".../experiments/<32hex>/output/log"
+        m = re.search(r"(?:task id=|/experiments/)([0-9a-f]{32})", blob)
+        tid = m.group(1) if m else ""
         if not tid:
             print(f"  FAILED {run}:\n{blob[-600:]}")
             break

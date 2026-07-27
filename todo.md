@@ -22,11 +22,13 @@ v1 history and scores: `experiments/v1-reference/`.
 - [x] Transport code reviewed (the advisor caught that v0.1.1-v0.2.3 + the v0.3.0 store rewrite were post-review): 2 reviewers on the transport diff + 1 on store.py; all findings fixed (partial-upload-looks-complete closed via manifest+verify; preflight; prefix-clear; enqueue hard-fail; overfit upload gate). synoptic v0.3.1.
 - [x] GATE MET: real full-size round-trip verified — ms8_arabic_drafting (v0.3.1) trained + scored (whole-OT ckb 30.19 / urd 28.86); its 837 MB model uploaded complete (185 files + manifest), fetch_weights --run downloaded and manifest-verified all 185, model loads and generates correct Central Kurdish Genesis 1:1. First real v2 model now on the store.
 
-## Awaiting David (fleet held per instruction)
-- [ ] Go/no-go on the remaining 21 fleet runs (ms8_arabic_drafting already banked)
-- [ ] `gh auth refresh -h github.com -s delete_repo`, then delete old bible-mt-same-script + rename v2-staging -> bible-mt-same-script (do BEFORE the fleet: store paths key off the repo name — currently 'bible-mt-same-script-v2-staging')
-- [ ] 3090 driver reboot (local training/verification blocked until then)
-- [ ] Optional pre-fleet: a scripts/run_fleet.py launcher (absolute paths, ≥2-free gate, records task ids) to de-risk 21 manual enqueues
+## Fleet RUNNING (approved 2026-07-27)
+- [x] Old repo deleted (David) + staging renamed to bible-mt-same-script; runs store under the clean path
+- [x] scripts/run_experiments.py launcher (≥2-free gate, paced, fail-fast, idempotent tracking in experiments/fleet-tasks.csv)
+- [x] MinIO transport proven on jobs_backlog aqua workers (first 5 runs cleared preflight, in_progress)
+- [ ] 21 remaining runs enqueueing under the gate (5 in flight); collect scores per completion, then results docs + v1-vs-v2 summary
+- [ ] Publish winners to HF (cc-by-sa-4.0) after David picks them
+- [ ] 3090 driver reboot (local only; not blocking the fleet)
 
 ## Awaiting David
 - [ ] Go/no-go on the 22-run fleet (held per instruction)

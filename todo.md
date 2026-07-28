@@ -25,10 +25,11 @@ v1 history and scores: `experiments/v1-reference/`.
 - [x] Reusable `synoptic.sota`; code review 3 rounds clean; 18 baselines built (extracts in shared `MT/scripture` `_synsota` suffix; per-run donor test sets).
 - [x] Exact-test-set mechanism verified locally (silnlp preprocess: test size 24094, byte-identical to our donor).
 
-## In progress
+### SOTA baselines — COMPLETE (18/18)
 
-- [ ] SOTA fleet: enqueue all 18 NLLB-1.3B runs on `jobs_backlog` (≥2-free gate). 2 enqueued; a capacity monitor tops up the rest as workers free (`experiments/sota-tasks.csv`). A long-lived launcher gets killed, so enqueue in bounded batches on capacity pings.
-- [ ] On SOTA completion: collect per-book chrF3 from the store (`~/M/MT/experiments/synoptic-sota/<run>/scores-*.csv`) → beat/tie/lose vs NLLB table (ms8 as contender), per book.
+- [x] All 18 NLLB-1.3B runs enqueued on `jobs_backlog` (≥2-free gate) and terminal (`experiments/sota-tasks.csv`).
+- [x] Per-book chrF3 collected + compared (`scripts/sota_compare.py` → `experiments/sota/scores-*.csv`, `all-per-book.csv`, `experiments/sota-comparison.md`). `arabic_drafting_ckb` scored locally (its silnlp scoring step emitted no CSV); metric verified to reproduce silnlp to 0.00 under both sacrebleu 2.4.3 and 2.6.0.
+- [x] **Headline: NLLB beats closed-text ms8 on 384/392 book-rows; 0 wins in 320 OT rows; the only 8 wins are Goofa NT (the Ometo anomaly).** The current closed-text method does not replace NLLB for OT drafting.
 
 ## Pending / awaiting David
 
@@ -39,4 +40,4 @@ v1 history and scores: `experiments/v1-reference/`.
 ## Cross-repo follow-ups
 
 - [ ] Add the validation-bias note to the `DavidCBaines/ebible_m2m-ms8-ie-shareable` HF model card (authorized 2026-07-25).
-- [ ] `bible-mt-family-transfer`: adopt `synoptic` (drop its vendored copy) and add its own `scripts/sota.py` building SotaSpecs from its configs (`synoptic.sota` needs no change).
+- [ ] `bible-mt-family-transfer` v2: rebuild on `synoptic` (v1 renamed to `bible-mt-family-transfer-v1`, kept for its data-prep artifacts + code-review-findings doc; it never ran on H100). v2 pins `synoptic` instead of vendoring, and adds its own `scripts/sota.py` building SotaSpecs from its configs (`synoptic.sota` needs no change).

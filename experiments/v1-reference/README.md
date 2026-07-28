@@ -3,7 +3,7 @@
 These are the complete score tables and results documents from the series'
 first run (22 H100 runs, completed 2026-07-25) — kept for comparison, **not
 valid as reported results**. A code review
-(`bible-mt-family-transfer/experiments/code-review-findings.md`) confirmed
+(`bible-mt-family-transfer-v1/experiments/code-review-findings.md`) confirmed
 three defects live during every v1 run:
 
 1. **Checkpoint selection used test verses.** The early-stopping set was

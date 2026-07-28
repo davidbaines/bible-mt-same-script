@@ -111,3 +111,87 @@ Fusion (ms8) vs single-source (base) chrF3 on the headline test sets, clean meth
 | Latin-Bantu gap-filling    | nde      | MRK    |    59.64 |    59.77 |    0.13 |
 | Latin-Bantu gap-filling    | nya      | GEN    |    53.78 |    54.29 |    0.51 |
 | Latin-Bantu gap-filling    | nya      | MRK    |    62.2  |    62.59 |    0.39 |
+## The Goofa NT anomaly
+
+One result stands out from every other in the series: for the Goofa (`gofe`)
+target, multi-source fusion adds **+14 to +18 chrF3** on the New Testament and
+the resulting model **beats NLLB-1.3B** on Mark and the epistles — the only
+place in the whole SOTA comparison where the closed-text method wins. Its mirror
+language Gamo (`gmve`) — same script, same pool, near-identical size, run under
+the identical conditions — gains only **+3 to +5** and loses to NLLB everywhere.
+The asymmetry is real under the clean v2 methodology: it survived the validation
+fixes (drafting Mark essentially unchanged v1→v2 at −0.4; gap-fill Mark came down
+−4.1 to 57.4 but still carries a +16 fusion gain and still sits far above NLLB).
+It is also not copying: the source-copy floor is ~11 chrF3 and the best single
+other rendering ~14, while fused Goofa Mark reaches 54–57.
+
+| target | test | copy | best-other | base (1 src) | ms8 (K=8) | fusion gain | NLLB | ms8 − NLLB |
+|:--|:--|--:|--:|--:|--:|--:|--:|--:|
+| Goofa `gofe` | MRK (draft) | 10.6 | 14.3 | 40.1 | **54.6** | +14.5 | 40.0 | **+14.6** |
+| Goofa `gofe` | epistles (draft) | 12.1 | 15.0 | 27.0 | **43.6** | +16.6 | ~33 | **+9–10** |
+| Goofa `gofe` | MRK (gap-fill) | 10.6 | 14.3 | 41.3 | **57.4** | +16.0 | 40.6 | **+16.7** |
+| Gamo `gmve` | MRK (draft) | 10.9 | 10.9 | 30.8 | 34.5 | +3.8 | 39.9 | −5.4 |
+| Gamo `gmve` | MRK (gap-fill) | 10.9 | 10.9 | 33.3 | 36.1 | +2.9 | 40.4 | −4.3 |
+| Goofa `gofe` | OT mean (draft, n=34) | — | 13.9 | 15.4 | 18.4 | +3.0 | 34.1 | −15.7 |
+| Gamo `gmve` | OT mean (draft, n=34) | — | 13.2 | 17.2 | 18.8 | +1.5 | 31.6 | −12.9 |
+
+Two things are going on. The first is well established by the data; the second
+is a pair of empirical facts for which we offer a hypothesis, not a proven
+mechanism.
+
+**1. Source availability — why the win is NT-only (established).** The Ethiopic
+pool is five Ometo (SW Ethiopian) translations, all `by-sa`: Gamo and Goofa
+carry the whole Bible, but Gayil (`gyl`), Yemsa (`jnje`) and Oyda (`oyde`) are
+**NT-only**. So for a Goofa NT verse the model fuses **four** sibling renderings
+(Gamo + the three NT-only ones); for a Goofa OT verse only **one** sibling
+(Gamo) has the text, and K=8 fusion collapses to roughly single-source. That is
+exactly what the numbers show: the NT fusion gain is +14–18, the OT gain only
++3, and the OT loses to NLLB by ~16. Multi-source fusion needs several sources
+present at the verse; the OT does not have them. This factor is not in doubt.
+
+**2. Why Goofa and not Gamo — two facts, one hypothesis.** Gamo has the same
+four NT siblings available (Goofa + gyl + jnje + oyde), yet gains only +3–5.
+Two separate empirical facts sit underneath this:
+
+- *Target-predictability asymmetry, visible with a single source.* This is the
+  same Gamo↔Goofa pair in opposite directions: translating **into Goofa from
+  Gamo scores 40.1** on Mark, but **into Gamo from Goofa only 30.8** — a
+  10-point gap with one source and no cluster involved. Goofa is simply the
+  easier language to generate here (a more regular orthography/morphology, more
+  consistent tokenization, or a more literal translation would all produce
+  this; we have not yet measured which).
+- *Fusion helps more for the easier target.* Adding the three further siblings
+  then adds +14–18 for Goofa but only +3–5 for Gamo.
+
+A tempting single explanation is "Goofa is central to the Ometo cluster" — but
+centrality is a symmetric distance property and **cannot** account for the
+one-source directional gap above; distance from Gamo to Goofa is the same either
+way. So we name cluster-centrality only as one candidate explanation for the
+*differential fusion gain* (the second fact), and record the single-source
+asymmetry (the first fact) as the thing it does not explain. Distinguishing the
+candidate causes (orthographic regularity, tokenization fertility, translation
+literalness, genuine cluster geometry) is future work; the honest statement
+today is the two facts, not a mechanism.
+
+**What the published models are and are not good for.** In both conditions the
+wins are on the **New Testament — text a drafting or gap-filling user already
+has**. A drafting user has their NT and wants the OT drafted; a gap-fill user
+has most of the Bible and wants the holes filled. The model's OT output is what
+they would actually use, and there it loses to NLLB (18–22 chrF3 drafting, −16;
+Genesis-250 gap-fill 47.7 vs 56.9). So the Goofa NT result is strong evidence
+that the method *learned Goofa well*, and the models are worth sharing as
+research artifacts and as high-quality Goofa NT generators — but they are **not**
+a drop-in "better than NLLB" tool for the OT-drafting task, and any model card
+must say so plainly.
+
+**Why this does not generalise to beating NLLB.** The win requires *both* many
+same-cluster renderings at the test verses *and* a target that is easy to
+generate / well-predicted by those siblings. OT drafting in this series has
+neither — usually one OT source, and no predictability guarantee — which is why
+the closed-text method loses to NLLB across all 320 OT book-rows. The Goofa
+result is therefore not evidence that the method replaces NLLB in general; it
+marks the specific regime where a from-scratch closed-text model is worth using:
+a low-resource, easy-to-generate target embedded in a cluster of several
+available same-script renderings, with no adequate pretrained model. That is a
+real and useful niche (it is precisely the Bible-translation setting for many
+minority languages), but it is narrower than "beat NLLB everywhere".
